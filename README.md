@@ -113,6 +113,8 @@ graph TD;
 * Insert table here for more detailed tool descriptions 
 
 TABLE TEST
+
+
 ---
 category: The type of product goes here
 intro: 'You can build tables to organize information in comments, issues, pull requests, and wikis.'
