@@ -151,11 +151,11 @@ graph LR;
     E --> E6[Network Forensics]
         
       
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
+    style A fill:#87ceeb  /* Sky blue */
+    style B fill:#dda0dd  /* Plum */
+    style C fill:#98fb98  /* Pale green */
+    style D fill:#f0c674  /* Light orange */
+    style E fill:#f08080  /* Light coral */
 ```
 
 
