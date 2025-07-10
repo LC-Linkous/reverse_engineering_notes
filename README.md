@@ -112,38 +112,10 @@ graph TD;
 
 * Insert table here for more detailed tool descriptions 
 
-TABLE TEST
-
-
----
-category: The type of product goes here
-intro: 'You can build tables to organize information in comments, issues, pull requests, and wikis.'
-product: '{% data reusables.gated-features.markdown-ui %}'
-redirect_from:
-  - /articles/organizing-information-with-tables
-  - /github/writing-on-github/organizing-information-with-tables
-  - /github/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
-versions:
-  fpt: '*'
-  ghes: '*'
-  ghec: '*'
-shortTitle: Organized data with tables
-category: The type of product goes here
-intro: 'You can build tables to organize information in comments, issues, pull requests, and wikis.'
-product: '{% data reusables.gated-features.markdown-ui %}'
-redirect_from:
-  - /articles/organizing-information-with-tables
-  - /github/writing-on-github/organizing-information-with-tables
-  - /github/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
-versions:
-  fpt: '*'
-  ghes: '*'
-  ghec: '*'
-shortTitle: Organized data with tables
----
-
-
-
+| Category | Device |
+|----------|--------|
+| SDRs | **Model** \| **Price** <br> RTL-SDR \| $25 <br> HackRF One \| $300 <br> USRP B200 \| $700 |
+| Adapters | *Content for adapters section* |
 
 
 ### Computer & Operating System
