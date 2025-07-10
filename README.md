@@ -13,13 +13,6 @@ As a general disclaimer, do not attempt to access or interface any device or net
   * [What is Reverse Engineering?](#what-is-reverse-engineering)
   * [Getting Started with Reverse Engineering](#getting-started-with-reverse-engineering)
 * [Tool-Problem-Device Method](#tool-problem-device-method)
-  * [Tools](#tools)
-    * [Selecting a Tool](#selecting-a-tool)
-    * [DIY vs. Purchase](#diy-vs-purchase)
-  * [Problems](#problems)
-    * [Identifying a Problem](#identifying-a-problem)
-  * [Devices](#devices)
-    * [Selecting a Device](#selecting-a-device)
 * [The Flow Chart](#the-flow-chart)
 * [The Table](#the-table)
 * [Documentation Methods]
@@ -161,8 +154,97 @@ graph LR;
 
 
 
+## The Table
+
+## Documentation Methods
 
 
+## Bookshelf
+
+In this section are a collection of books and websites for further reading. No single reference is a catch-all for any topic, but some of these may prove useful.
+(No PDFs are provided through this repository or from the authors of this repository)
+
+
+**Reverse Engineering**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+
+
+**Circuity Basics**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+
+
+**Hardware Interfacing Basics**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+
+**Wireless Basics**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+
+**Using Operating Systems**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+
+
+
+## Glossary
+This section provides s beginner-friendly launch point to more specific terminology, techniques, and best practices. To keep this accessible, some terms are a bit simplified and may link to other references. 
+
+
+* WORD OR ABBREVIATION - full spelling if abbreviation. definition or usage. 
+
+
+
+
+## References
+
+**Making Charts and Tables**
+
+
+**Popular Tool Purchasing Sites Used for Tool Descriptions and Pricing**
+NOTE: This is not an endorsement of any particular vendor, manufacturer, or tool. 
 
 
 
