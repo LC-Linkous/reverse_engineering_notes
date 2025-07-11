@@ -108,7 +108,7 @@ mermaid markdown test
 
 ```mermaid
 graph LR;
-    A[Reverse Engineering] --> B[[Hardware Analysis](#the-table)]
+    A[Reverse Engineering] --> B[Hardware Analysis]
     A --> C[Code Analysis]
     A --> D[Wireless Analysis]
     A --> E[Network Analysis]
