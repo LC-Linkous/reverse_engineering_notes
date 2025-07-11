@@ -145,6 +145,17 @@ graph LR;
     E --> E5[Network Infrastructure]
     E --> E6[Network Forensics]
         
+
+
+    B2 --> B2a["• Multimeter<br>• Oscilloscope<br>• Logic Analyzer"]
+    B3 --> B3a["• Microscope<br>• Thermal Camera<br>• UV Light"]
+    B4 --> B4a["• KiCad<br>• Altium Viewer<br>• PCB Photos"]
+    B5 --> B5a["• Logic Analyzer<br>• Oscilloscope<br>• Function Generator"]
+    B6 --> B6a["• Power Supply<br>• Current Meter<br>• EXAMPLE"]
+
+
+
+
       
     style A fill:#87ceeb,color:#000  
     style B fill:#dda0dd,color:#000  
