@@ -102,6 +102,8 @@ The Flow Chart starts off with 4 core topics:
 
 Within each of those topics are a series of sub-topics, and then eventually some tools and examples. These are not exhaustive lists and are meant as a starting point. There are undoubtedly other good tools that exist for specific purposes that may not have been included in this list. 
 
+Clicking on a sub-topic block will redirect either to a subsection with more information on the topic, or the respective table if clicking a block listing tools. 
+
 
 
 mermaid markdown test
@@ -149,9 +151,125 @@ graph LR;
     style C fill:#98fb98,color:#000  
     style D fill:#f0c674,color:#000  
     style E fill:#f08080,color:#000  
+
+
+    click B "#hardware-analysis"
+    click B1 ""
+    click B2 ""
+    click B3 ""
+    click B4 ""
+    click B5 ""
+    click B6 ""
+    click B7 ""
+    click B8 ""
+
+    click C "#code-analysis"
+    click C1 ""
+    click C2 ""
+    click C3 ""
+    click C4 ""
+    click C5 ""
+    click C6 ""
+
+    click D "#wireless-analysis"
+    click D1 ""
+    click D2 ""
+    click D3 ""
+    click D4 ""
+    click D5 ""
+    click D6 ""
+
+    click E "#network-analysis"
+    click E1 ""
+    click E2 ""
+    click E3 ""
+    click E4 ""
+    click E5 ""
+    click E6 ""
+
+
 ```
 
 
+### Hardware Analysis
+
+#### Physical Device Access
+
+#### Circuit Analysis
+
+#### Component ID
+
+#### PCB Layout
+
+#### Signal Analysis
+
+#### Power Analysis
+
+#### Side-channel Analysis
+
+#### Fault Injection
+
+
+
+
+
+### Code Analysis
+
+#### Software
+
+
+#### Firmware
+
+
+#### Embedded
+
+
+#### Mobile
+
+
+#### Web Applications
+
+
+#### Malware Analysis
+
+       
+
+### Wireless Analysis
+
+
+#### WiFi
+
+
+#### Bluetooth
+
+
+#### RFID/NFC
+
+
+#### Sub-GHz/ISM
+
+
+#### Cellular/Mobile
+
+
+#### IoT Protocols
+
+
+### Network Analysis
+
+
+#### Protocol Analysis
+
+
+#### Packet Capture
+
+#### Network Security
+
+#### Industrial/IoT Protocols
+
+#### Network Infrastructure
+
+#### Network Forensics
 
 
 ## The Table
