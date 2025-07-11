@@ -145,10 +145,6 @@ graph LR;
     E --> E5[Network Infrastructure]
     E --> E6[Network Forensics]
         
-
-
-    Make these examples of what the thing is first. 2 branches? examples in 1 box, tools in the other?
-
     B1 --> B1a1["Task Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
     B1 --> B1a2["Tool Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
     B2 --> B2a["• Multimeter<br>• Oscilloscope<br>• Logic Analyzer"]
