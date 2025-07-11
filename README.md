@@ -92,7 +92,7 @@ The following sections contain some notes for choosing tools, identifying and ar
 
 ## The Flow Chart
 
-`The Flow Chart` (All Caps) is the affectionate nickname given to the constantly referenced chart of how select topics in reverse engineering are related or use similar tools. This version is simplified a little so it can be formatted on thie README, but the information is still there (just maybe linked to a table in the next section). 
+`The Flow Chart` (All Caps) is the affectionate nickname given to the constantly referenced chart of how select topics in reverse engineering are related or use similar tools. This version is simplified a little so it can be formatted on this README, but the information is still there (just maybe linked to a table in the next section). 
 
 The Flow Chart starts off with 4 core topics:
 * Wireless Analysis
@@ -147,7 +147,10 @@ graph LR;
         
 
 
-    B1 --> B1a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    Make these examples of what the thing is first. 2 branches? examples in 1 box, tools in the other?
+
+    B1 --> B1a1["Task Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    B1 --> B1a2["Tool Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
     B2 --> B2a["• Multimeter<br>• Oscilloscope<br>• Logic Analyzer"]
     B3 --> B3a["• Microscope<br>• Thermal Camera<br>• UV Light"]
     B4 --> B4a["• KiCad<br>• Altium Viewer<br>• PCB Photos"]
@@ -364,6 +367,16 @@ In this section are a collection of books and websites for further reading. No s
   * short explanation
 
 
+**SDR Basics**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
 
 **Using Operating Systems**
 1. REFERENCE
@@ -391,6 +404,10 @@ This section provides s beginner-friendly launch point to more specific terminol
 ## References
 
 **Making Charts and Tables**
+1. github markdown tables
+2. the mermaid cite
+3.
+4.
 
 
 **Popular Tool Purchasing Sites Used for Tool Descriptions and Pricing**
