@@ -153,7 +153,7 @@ graph LR;
     style E fill:#f08080,color:#000  
 
 
-    click B "#hardware-analysis" "https://github.com/LC-Linkous/reverse_engineering_notes"
+    click B "https://github.com/LC-Linkous/reverse_engineering_notes#hardware-analysis"
     click B1 "#physical-device-access"
     click B2 "#circuit-analysis"
     click B3 "#component-id"
