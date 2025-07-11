@@ -147,14 +147,35 @@ graph LR;
         
 
 
+    B1 --> B1a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
     B2 --> B2a["• Multimeter<br>• Oscilloscope<br>• Logic Analyzer"]
     B3 --> B3a["• Microscope<br>• Thermal Camera<br>• UV Light"]
     B4 --> B4a["• KiCad<br>• Altium Viewer<br>• PCB Photos"]
     B5 --> B5a["• Logic Analyzer<br>• Oscilloscope<br>• Function Generator"]
     B6 --> B6a["• Power Supply<br>• Current Meter<br>• EXAMPLE"]
+    B7 --> B7a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    B8 --> B8a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
 
+    C1 --> C1a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    C2 --> C2a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    C3 --> C3a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    C4 --> C4a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    C5 --> C5a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    C6 --> C6a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
 
+    D1 --> D1a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    D2 --> D2a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    D3 --> D3a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    D4 --> D4a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    D5 --> D5a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    D6 --> D6a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
 
+    E1 --> E1a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    E2 --> E2a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    E3 --> E3a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    E4 --> E4a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    E5 --> E5a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    E6 --> E6a["• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
 
       
     style A fill:#87ceeb,color:#000  
