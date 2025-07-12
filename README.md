@@ -66,6 +66,7 @@ The `Tool-Problem-Device Method` used here is a general technique for answering 
 * Where am I starting?
 * What am I working with? 
 * What am I trying to accomplish?
+* What are the benefits of this approach?
 
 With this method, you have three components to consider before answering the above questions: a tool, a problem, and a device. You choose one of those components, and that decision influences the other two. For instance, if you want to learn how to use a `JTAG enumerator` or `serial to RS232` reader, then you need to find a device with those interfaces. Knowing the tool and the device, your starting problem is then something similar to "how do I get data" or "how do I make the serial connection". If, instead, you start with a device such as a `Bluetooth wearable heartrate sensor`, then your problem may be "how do I get Bluetooth data" and your tool will need to be selected to collect and/or decode that data.
 
@@ -84,8 +85,14 @@ This is, of course, a simplification of the possible scope. In this method, a `d
   * Getting data, getting firmware, getting memory
   * Creating documentation for a project about to be adopted by a company
   * Creating an interface API to expand functionality
+* What are the benefits of this approach?
+  * How reproducable is the approach, and how accurate is the data or documentation
+  * Reasons for chosing destructive over non-desctrutive methods
+  * Reasons for a DIY tool or larger purchase, vs. using something standard
+  * Who is benefiting from this knowledge or these actions (identifying stakeholders)
 
-In the real world, you may be given the device or problem (and thus the constraints) in a work environment. Your job will then be how to select the tool or tools in order to address the problem and stay within the imposed limits and constraints. The `Tool-Problem-Device` method still holds up.
+
+These questions are important to begin establishing a scope, objectives, and stakeholders. For a personal project, you can be a stakeholder and the benefit of the project can be purely educational. In the real world, you may be given the device or problem (and thus the constraints) in a work environment. Your job will then be how to select the tool or tools in order to address the problem and stay within the imposed limits and constraints. The `Tool-Problem-Device` method still holds up.
 
 The following sections contain some notes for choosing tools, identifying and articulating problems, and choosing devices. The [Flow Chart](#the-flow-chart) and [Table](#the-table) sections do into more detail about specific tools and approaches. 
 
@@ -249,190 +256,17 @@ graph LR;
 
 ### Hardware Analysis
 
+Hardware analysis is the process of examining a physical piece (or pieces) of hardware for information on the device's operation. This is typically the first step in the reverse engineering gprocess as it provides initial informaiton about the device, interfacing, manufacuter, and potential starting points. 
+
+This part of the process may include dissassembly of the enclosure or device to get a clsoer look at key compoennts such as circuits, chips, power distribution, and industry standard interfacing that already exists on the device. Stypding the physical layout, analyzing connections between components, and understanding the physical interactions between parts of a device happens here.
+
+
 #### Physical Device Access
 
-#### Circuit Analysis
+Accessing the device is the first step of reverse engineering. Some devices are encased in tamper-resistant enclosures, while others are simple to open or may have no enclosure. Documentation of the disassembly process helps maintain evidence of the process and enables reassembly if needed.
 
-#### Component ID
+Physical access methods range from simple enclosure(case) removal using standard tools, to complex techniques involving specialized equipment for tamper-resistant devices. Or a hacksaw on a plastic enclosure. Or disolving epoxy, glues, and other materials without disolving parts of your connecting components.
 
-#### PCB Layout
-
-#### Signal Analysis
-
-#### Power Analysis
-
-#### Side-channel Analysis
-
-#### Fault Injection
-
-
-
-
-
-### Code Analysis
-
-#### Software
-
-
-#### Firmware
-
-
-#### Embedded
-
-
-#### Mobile
-
-
-#### Web Applications
-
-
-#### Malware Analysis
-
-       
-
-### Wireless Analysis
-
-
-#### WiFi
-
-
-#### Bluetooth
-
-
-#### RFID/NFC
-
-
-#### Sub-GHz/ISM
-
-
-#### Cellular/Mobile
-
-
-#### IoT Protocols
-
-
-### Network Analysis
-
-
-#### Protocol Analysis
-
-
-#### Packet Capture
-
-#### Network Security
-
-#### Industrial/IoT Protocols
-
-#### Network Infrastructure
-
-#### Network Forensics
-
-
-## The Table
-
-## Documentation Methods
-
-
-## Bookshelf
-
-In this section are a collection of books and websites for further reading. No single reference is a catch-all for any topic, but some of these may prove useful.
-(No PDFs are provided through this repository or from the authors of this repository)
-
-
-**Reverse Engineering**
-1. REFERENCE
-  * short explanation
-2. REFERENCE
-  * short explanation
-3. REFERENCE
-  * short explanation
-4. REFERENCE
-  * short explanation
-
-
-
-
-**Circuity Basics**
-1. REFERENCE
-  * short explanation
-2. REFERENCE
-  * short explanation
-3. REFERENCE
-  * short explanation
-4. REFERENCE
-  * short explanation
-
-
-
-
-**Hardware Interfacing Basics**
-1. REFERENCE
-  * short explanation
-2. REFERENCE
-  * short explanation
-3. REFERENCE
-  * short explanation
-4. REFERENCE
-  * short explanation
-
-
-
-**Wireless Basics**
-1. REFERENCE
-  * short explanation
-2. REFERENCE
-  * short explanation
-3. REFERENCE
-  * short explanation
-4. REFERENCE
-  * short explanation
-
-
-**SDR Basics**
-1. REFERENCE
-  * short explanation
-2. REFERENCE
-  * short explanation
-3. REFERENCE
-  * short explanation
-4. REFERENCE
-  * short explanation
-
-
-**Using Operating Systems**
-1. REFERENCE
-  * short explanation
-2. REFERENCE
-  * short explanation
-3. REFERENCE
-  * short explanation
-4. REFERENCE
-  * short explanation
-
-
-
-
-
-## Glossary
-This section provides s beginner-friendly launch point to more specific terminology, techniques, and best practices. To keep this accessible, some terms are a bit simplified and may link to other references. 
-
-
-* WORD OR ABBREVIATION - full spelling if abbreviation. definition or usage. 
-
-
-
-
-## References
-
-**Making Charts and Tables**
-1. github markdown tables
-2. the mermaid cite
-3.
-4.
-
-
-**Popular Tool Purchasing Sites Used for Tool Descriptions and Pricing**
-NOTE: This is not an endorsement of any particular vendor, manufacturer, or tool. 
-
-
+> [!TIP]
+> Document markings extensively and go slow when opening an enclosure where you cannot see inside. Cables, wires, and other connectors may be SHORT and can break if accidentally pulled. 
 
