@@ -285,9 +285,12 @@ The process typically begins with identification of PCBs, daughterboards, and mo
 
 Using a multimeter for continuity testing helps increase the accuracy and speed for identifying paths in both wires and traces. Understanding circuit components, and their operation is a key factor in identifying differences in behavior when the circuit is powered ON, powered OFF, or when components isolated for information extraction.
 
+
 #### Component ID
 Component identification is a necessity when working with hardware. If documentation of a device is provided, major components may be included in a manual or Build of Materials (BOM). It is more common to be provided with little or no documentation, in which case an internet search is required.
+
 This stage of research focuses on cataloging and researching individual parts within the device, including integrated circuits, discrete components, and connectors. Part numbers, manufacturer markings, and physical characteristics identified during [Circuit Investigation](#circuit-investigation) helps determine component specifications and functionality. 
+
 Researching component datasheets reveals operational parameters, pin configurations, and communication protocols. These datasheets are often acquired by searching databases of vendors or manufacturers. 
 
 #### PCB Layout
@@ -298,4 +301,5 @@ Multi-layer PCBs may require X-ray imaging or delamination techniques to reveal 
 
 #### Signal Analysis
 Signal analysis is the first step that requires more than general tools and a multimeter. This topic may not be necessary for all categories of reverse engineering, especially if the focus is on firmware extraction or software analysis. However, monitoring and interpreting the electrical signals during device operation is important to understand how communication protocols and data flows across the device or PCB. 
+
 Oscilloscopes and logic analyzers capture timing relationships and signal characteristics across various test points. These test points may be on chips, debug ports, or as conductive pads on the PCB designed specifically for testing. Protocol analysis helps identify standard communication interfaces such as SPI, I2C, UART, or other protocols. Signal integrity measurements can be used to reveal timing constraints, unintentional device chatter, and noise that may affect reliability. 
