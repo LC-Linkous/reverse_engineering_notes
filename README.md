@@ -107,9 +107,12 @@ The Flow Chart starts off with 4 core topics:
 * Hardware Analysis 
 * Network Analysis
 
-Within each of those topics are a series of sub-topics, and then eventually some tools and examples. These are not exhaustive lists and are meant as a starting point. There are undoubtedly other good tools that exist for specific purposes that may not have been included in this list. 
+Within each of those topics are a series of sub-topics, and then eventually some tools and examples. Sub-topics are not meant to be insular, and they often rely on information gathered by methods under the parent topic. 
 
-Clicking on a sub-topic block will redirect either to a subsection with more information on the topic, or the respective table if clicking a block listing tools. 
+Clicking on a sub-topic block will redirect either to a subsection with more information on the topic, or the respective table if clicking a block listing tools. These are not exhaustive lists and are meant as a starting point. There are undoubtedly other good tools that exist for specific purposes that may not have been included in this list. 
+
+
+
 
 
 
@@ -123,7 +126,7 @@ graph LR;
     A --> E[Network Analysis]
 
     B --> B1[Physical Device Access]
-    B --> B2[Circuit Analysis]
+    B --> B2[Circuit Investigation]
     B --> B3[Component ID]    
     B --> B4[PCB Layout]
     B --> B5[Signal Analysis]
@@ -218,7 +221,7 @@ graph LR;
 
     click B "https://github.com/LC-Linkous/reverse_engineering_notes#hardware-analysis"
     click B1 "https://github.com/LC-Linkous/reverse_engineering_notes#physical-device-access"
-    click B2 "https://github.com/LC-Linkous/reverse_engineering_notes#circuit-analysis"
+    click B2 "https://github.com/LC-Linkous/reverse_engineering_notes#circuit-investigation"
     click B3 "https://github.com/LC-Linkous/reverse_engineering_notes#component-id"
     click B4 "https://github.com/LC-Linkous/reverse_engineering_notes#pcb-layout"
     click B5 "https://github.com/LC-Linkous/reverse_engineering_notes#signal-analysis"
@@ -261,6 +264,9 @@ Hardware analysis is the process of examining a physical piece (or pieces) of ha
 This part of the process may include dissassembly of the enclosure or device to get a clsoer look at key compoennts such as circuits, chips, power distribution, and industry standard interfacing that already exists on the device. Stypding the physical layout, analyzing connections between components, and understanding the physical interactions between parts of a device happens here.
 
 
+[LINK TO TABLE] <- link tables under the major headers to start with
+
+
 #### Physical Device Access
 
 Accessing the device is the first step of reverse engineering. Some devices are encased in tamper-resistant enclosures, while others are simple to open or may have no enclosure. Documentation of the disassembly process helps maintain evidence of the process and enables reassembly if needed.
@@ -270,3 +276,11 @@ Physical access methods range from simple enclosure(case) removal using standard
 > [!TIP]
 > Document markings extensively and go slow when opening an enclosure where you cannot see inside. Cables, wires, and other connectors may be SHORT and can break if accidentally pulled. 
 
+
+#### Circuit Investigation
+
+Circuit investigation involves finding all of the electrical pathways (wires, traces, etc.) within and to a device. This is typically done to understand the power distribution, location of major components such as memory storage or actuators, and to identify where potential manufacturer interfacing (JTAG, SPI, etc.) may exist for other steps in the reverse engineering process. 
+
+The process typically begins with identification of PCBs, daughterboards, and modular control components. [Inspecting PCB traces](#) and major component placement can lead to the [identification of important components](#component-id), initial information for [power analysis](#power-analysis), and other information to prioritize follow up investigation. 
+
+Using a multimeter for continuity testing helps increase the accuracy and speed for identifying paths in both wires and traces. Understanding circuit components, and their operation is a key factor in identifying differences in behavior when the circuit is powered ON, powered OFF, or when components isolated for information extraction.
