@@ -115,9 +115,6 @@ Clicking on a sub-topic block will redirect either to a subsection with more inf
 
 
 
-
-mermaid markdown test
-
 ```mermaid
 graph LR;
     A[Reverse Engineering] --> B[Hardware Analysis]
@@ -252,7 +249,6 @@ graph LR;
     click E4 "https://github.com/LC-Linkous/reverse_engineering_notes#industrialiot-protocols"
     click E5 "https://github.com/LC-Linkous/reverse_engineering_notes#network-infrastructure"
     click E6 "https://github.com/LC-Linkous/reverse_engineering_notes#network-forensics"
-
 
 ```
 
