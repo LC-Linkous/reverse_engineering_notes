@@ -397,9 +397,9 @@ Power supply sequencing is a type of power analysis that helps identify startup 
   * Locate and identify current patterns that might relate to distinctive device states
 
 
-
-#### Side-channel Analysis
 ---
+#### Side-channel Analysis
+
 
 Side-channel analysis exploits unintended information leakage that may happen through electromagnetic emissions, acoustic signatures (or fingerprints), timing variations, and other phenomena.  Electromagnetic analysis (which may need specialized equipment) captures RF emissions, which may correlate with internal device operations. Acoustic analysis monitors sound patterns from the device that could indicate trends in mechanical behavior or electrical switching events (such as mechanical relays switching on, servo movement, etc.). Timing analysis measurements on components can detect the timing of a signal or command through a device that could provide information on execution delays, which could then provide some insight on how components work together within a device. 
 
@@ -412,9 +412,9 @@ Side-channel analysis exploits unintended information leakage that may happen th
   * Analyze power consumption patterns to identify algorithm information and potentially extract cryptographic keys 
 
 
-
-#### Fault Injection
 ---
+#### Fault Injection
+
 
 Fault injection is a technique where deliberate errors (faults) are introduced into a device or system to observe the following behavior. This can provide insights into error handling, system recovery, and other behavior. Fault injection testing helps researchers understand how systems can and cannot handle unexpected behavior, both of which are valuable. Some techniques include voltage glitching (manipulating the power supply), clock glitching (altering timing signals), and disrupting the normal execution flow in a device. 
 
