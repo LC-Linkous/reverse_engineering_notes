@@ -155,7 +155,7 @@ graph LR;
     E --> E5[Network Infrastructure]
     E --> E6[Network Forensics]
         
-    B1 --> B1a1["Task Examples:<br>• Documentation<br>• Photography<br>• Identifying markings"]
+    B1 --> B1a1["**Task Examples:**<br>• Documentation<br>• Photography<br>• Identifying markings"]
     B1 --> B1a2["Tool Examples:<br>• Notebook or digital notes<br>• Phone camera<br>• General tools (see table)"]
     B2 --> B2a1["Task Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
     B2 --> B2a2["• Multimeter<br>• Oscilloscope<br>• Logic Analyzer"]
