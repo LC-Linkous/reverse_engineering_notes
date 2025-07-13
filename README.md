@@ -288,10 +288,8 @@ Signal Analysis, Power Analysis, Side-channel Analysis, and Fault Injection requ
 Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABLE]() tables.
 
 
-
-#### Physical Device Access
 ---
-
+#### Physical Device Access
 
 Accessing the device is the first step of reverse engineering. Some devices are encased in tamper-resistant enclosures, while others are simple to open or may have no enclosure. Documentation of the disassembly process helps maintain evidence of the process and enables reassembly if needed.
 
@@ -308,8 +306,9 @@ Physical access methods range from simple enclosure(case) removal using standard
 > Document markings extensively and go slow when opening an enclosure where you cannot see inside. Cables, wires, and other connectors may be SHORT and can break if accidentally pulled. 
 
 
-#### Circuit Investigation
+
 ---
+#### Circuit Investigation
 
 Circuit investigation involves finding all of the electrical pathways (wires, traces, etc.) within and to a device. This is typically done to understand the power distribution, location of major components such as memory storage or actuators, and to identify where potential manufacturer interfacing (JTAG, SPI, etc.) may exist for other steps in the reverse engineering process. 
 
@@ -328,8 +327,8 @@ Using a multimeter for continuity testing helps increase the accuracy and speed 
   * Located any existing (or suspected) debug ports, programming headers, or test points (JTAG, SPI, UART, I2C)
 
 
-#### Component ID
 ---
+#### Component ID
 
 Component identification is a necessity when working with hardware. If documentation of a device is provided, major components may be included in a manual or Build of Materials (BOM). It is more common to be provided with little or no documentation, in which case an internet search is required.
 
@@ -344,9 +343,9 @@ Researching component datasheets reveals operational parameters, pin configurati
   * Use identified component IDs to locate data sheets for operation information
 
 
-
-#### PCB Layout
 ---
+#### PCB Layout
+
 All devices with sufficiently complicated circuity will have Printed Circuit Boards (PCBs). The analysis of PCB layout is similar to [component ID](#component-ID), except this step focuses on analyzing how components are placed and connected. This includes looking at the traces, figuring out how many layers exist, and understanding how design constraints and choice may effect device security. While it is becoming less common as companies become more security aware (and are willing to spare the expense), it is possible for unintended wireless emissions to be a potential [side channel attack](#side-channel-analysis).
 
 Multi-layer PCBs may require X-ray imaging or delamination techniques to reveal internal routing and hidden components. Delamination techniques are inherently destructive and should be considered only when there are no other options (or multiple copies of the PCB are available). 
@@ -362,9 +361,8 @@ Multi-layer PCBs may require X-ray imaging or delamination techniques to reveal 
   * Depending on the reverse engineering goals, techniques such as power analysis, signal analysis, or fault injection may be employed. 
 
 
-
-#### Signal Analysis
 ---
+#### Signal Analysis
 
 Signal analysis is the first step that requires more than general tools and a multimeter. This topic may not be necessary for all categories of reverse engineering, especially if the focus is on firmware extraction or software analysis. However, monitoring and interpreting the electrical signals during device operation is important to understand how communication protocols and data flows across the device or PCB. 
 
@@ -381,8 +379,9 @@ Oscilloscopes and logic analyzers capture timing relationships and signal charac
   * When accessible, communication patterns may be able to be captured during different device operation states. This can sometimes be directly measured from the bus
 
 
-#### Power Analysis
+
 ---
+#### Power Analysis
 
 Power analysis examines the device's power consumption patterns to gather information about internal operations. Current measurements during different operational states (ON, OFF, startup, power down, standby, etc.) reveal functional blocks and their activity levels. This analysis also can find where components may be isolated on a board only when the device is powered off (such sections can occur when power is run to a section of the PCB through an IC or MOSFET)
 
@@ -400,7 +399,6 @@ Power supply sequencing is a type of power analysis that helps identify startup 
 ---
 #### Side-channel Analysis
 
-
 Side-channel analysis exploits unintended information leakage that may happen through electromagnetic emissions, acoustic signatures (or fingerprints), timing variations, and other phenomena.  Electromagnetic analysis (which may need specialized equipment) captures RF emissions, which may correlate with internal device operations. Acoustic analysis monitors sound patterns from the device that could indicate trends in mechanical behavior or electrical switching events (such as mechanical relays switching on, servo movement, etc.). Timing analysis measurements on components can detect the timing of a signal or command through a device that could provide information on execution delays, which could then provide some insight on how components work together within a device. 
 
 **Task Examples**
@@ -414,7 +412,6 @@ Side-channel analysis exploits unintended information leakage that may happen th
 
 ---
 #### Fault Injection
-
 
 Fault injection is a technique where deliberate errors (faults) are introduced into a device or system to observe the following behavior. This can provide insights into error handling, system recovery, and other behavior. Fault injection testing helps researchers understand how systems can and cannot handle unexpected behavior, both of which are valuable. Some techniques include voltage glitching (manipulating the power supply), clock glitching (altering timing signals), and disrupting the normal execution flow in a device. 
 
@@ -464,6 +461,7 @@ The original version of `The Table` featured linking and some overlapping flow c
 > None of the links provided in this section are affiliate links. They are for reference purposes only. Appearance in this repository is not an endorsement in a tool, software, device, etc.. Paid tools are listed for completeness, but even if is the only tool currently listed in a section that does not mean it is the only tool that exists. This list will be updated periodically, but it should not be assumed to be exhaustive.
 
 
+---
 ### General Tools Table
 
 Not all listed tools are necessary for all approaches. Tools listed in this section have broad applications to hardware and device interfacing. This table is typically linked to support other, specific tables in this repository README. 
