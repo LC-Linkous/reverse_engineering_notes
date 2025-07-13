@@ -155,8 +155,8 @@ graph LR;
     E --> E5[Network Infrastructure]
     E --> E6[Network Forensics]
         
-    B1 --> B1a1["Task Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
-    B1 --> B1a2["Tool Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
+    B1 --> B1a1["Task Examples:<br>• Documentation<br>• Photography<br>• Identifying markings"]
+    B1 --> B1a2["Tool Examples:<br>• Notebook or digital notes<br>• Phone camera<br>• General tools (see table)"]
     B2 --> B2a1["Task Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
     B2 --> B2a2["• Multimeter<br>• Oscilloscope<br>• Logic Analyzer"]
     B3 --> B3a1["Task Examples:<br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE"]
@@ -390,5 +390,159 @@ Fault injection is a technique where deliberate errors (faults) are introduced i
   * Alter timing signals to disrupt normal component coordination and/or execution flow
 * Input fuzzing
  * Identify input options. Create malformed or unexpected inputs to test device behavior
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## The Table
+
+The original version of `The Table` featured linking and some overlapping flow chart lines. Since this README does not have that functionality, the main table has been split up based on device categories, tool usage, and topic. No information has been lost, just a little formatting. Some tools may be listed several times in order to keep the associations from `The Flow Chart`. There is a condensed version of the smaller tables at the end of the section as a summary of everything mentioned in this Repository.
+
+
+
+> [!NOTE]  
+> This repository has been created as the public half of educational materials used in teaching an undergraduate cirriculum. There WILL be some bias towards tools that exist in the hardware lab(s) and penetration testing enviornments that the author(s) have worked in (or taught in). However, efforts have been made to keep this material general in order to provide a reference for beginners.
+
+> [!NOTE]  
+> None of the links provided in this section are affiliate links. They are for reference purposes only. Appearance in this repository is not an endorsement in a tool, software, device, etc.. Paid tools are listed for completeness, but even if is the only tool currently listed in a section that does not mean it is the only tool that exists. This list will be updated periodically, but it should nto be assumed to be exhaustive.
+
+
+
+
+
+
+
+
+
+## Documentation Methods
+
+## Bookshelf
+
+In this section are a collection of books and websites for further reading. No single reference is a catch-all for any topic, but some of these may prove useful.
+(No PDFs are provided through this repository or from the authors of this repository)
+
+**Reverse Engineering**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+
+**Circuity Basics**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+
+**Hardware Interfacing Basics**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+**Wireless Basics**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+**SDR Basics**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+**Using Operating Systems**
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+**Malware Basics**
+No references to creating, using, or distribting malware will be included in this repository. These references cover the definition and scope of what malware is and what it does.
+1. REFERENCE
+  * short explanation
+2. REFERENCE
+  * short explanation
+3. REFERENCE
+  * short explanation
+4. REFERENCE
+  * short explanation
+
+
+## Glossary
+This section provides s beginner-friendly launch point to more specific terminology, techniques, and best practices. To keep this accessible, some terms are a bit simplified and may link to other references. 
+
+* WORD OR ABBREVIATION - full spelling if abbreviation. definition or usage. 
+
+* DUT
+* PCB
+* RF
+* SDR
+
+
+## References
+
+**Making Charts and Tables**
+1. “Organizing information with tables - GitHub Docs,” GitHub Docs, 2025. https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables 
+2. “Creating diagrams - GitHub Docs,” GitHub Docs, 2025. https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams 
+3. "Flowcharts – Basic Syntax,” Mermaidchart.com, May 22, 2025. https://docs.mermaidchart.com/mermaid-oss/syntax/flowchart.html#flowcharts 
+
+
+**Popular Tool Purchasing Sites Used for Tool Descriptions and Pricing**
+NOTE: This is not an endorsement of any particular vendor, manufacturer, or tool. 
+
+
 
 
