@@ -59,7 +59,6 @@ This is not an exhaustive list (if there ever could be one). The specific topic 
 > Regarding circuity and power, an often repeated piece of advice is `If you DON'T KNOW, DON'T GUESS! Look it up!`. If you are working with, or around, hardware with ANY kind of power source (including capacitors!), look up the specs and make sure that you and your equipment are not at risk of electric shock. If you are still unsure after looking it up, find someone and ask!
 
 
-
 ## Tool-Problem-Device Method
 
 The `Tool-Problem-Device Method` used here is a general technique for answering the following questions:
@@ -91,11 +90,9 @@ This is, of course, a simplification of the possible scope. In this method, a `d
   * Reasons for a DIY tool or larger purchase, vs. using something standard
   * Who is benefiting from this knowledge or these actions (identifying stakeholders)
 
-
 These questions are important to begin establishing a scope, objectives, and stakeholders. For a personal project, you can be a stakeholder and the benefit of the project can be purely educational. In the real world, you may be given the device or problem (and thus the constraints) in a work environment. Your job will then be how to select the tool or tools in order to address the problem and stay within the imposed limits and constraints. The `Tool-Problem-Device` method still holds up.
 
 The following sections contain some notes for choosing tools, identifying and articulating problems, and choosing devices. The [Flow Chart](#the-flow-chart) and [Table](#the-table) sections do into more detail about specific tools and approaches. 
-
 
 ## The Flow Chart
 
@@ -110,7 +107,6 @@ The Flow Chart starts off with 4 core topics:
 Within each of those topics are a series of sub-topics, and then eventually some tools and examples. Sub-topics are not meant to be insular, and they often rely on information gathered by methods under the parent topic. 
 
 Clicking on a sub-topic block will redirect either to a subsection with more information on the topic, or the respective table if clicking a block listing tools. These are not exhaustive lists and are meant as a starting point. There are undoubtedly other good tools that exist for specific purposes that may not have been included in this list. 
-
 
 
 
@@ -215,7 +211,6 @@ graph LR;
     style D fill:#f0c674,color:#000  
     style E fill:#f08080,color:#000  
 
-
     click B "https://github.com/LC-Linkous/reverse_engineering_notes#hardware-analysis"
     click B1 "https://github.com/LC-Linkous/reverse_engineering_notes#physical-device-access"
     click B2 "https://github.com/LC-Linkous/reverse_engineering_notes#circuit-investigation"
@@ -252,7 +247,6 @@ graph LR;
 
 ```
 
-
 ### Hardware Analysis
 
 Hardware analysis is the process of examining a physical piece (or pieces) of hardware for information on the device's operation. This is typically the first step in the reverse engineering process as it provides initial information about the device, interfacing, manufacturer, and potential starting points. 
@@ -267,7 +261,6 @@ Accessing the device is the first step of reverse engineering. Some devices are 
 
 Physical access methods range from simple enclosure(case) removal using standard tools, to complex techniques involving specialized equipment for tamper-resistant devices. Or a hacksaw on a plastic enclosure. Or dissolving epoxy, glues, and other materials without dissolving parts of your connecting components.
 
-
 **Task Examples**
 * Documentation and photography
   * Take detailed photos of the device from multiple angles before opening. Include all labels, serial numbers, external connectors, and anything else that documents the device in the condition you received it in.
@@ -275,10 +268,8 @@ Physical access methods range from simple enclosure(case) removal using standard
   * Document these. When given permission to open or modify the device, tamper proof seals can be cut through with a sharp blade. Be mindful of components potentially underneath. Screws may have a thread locker (similar to Loctite or another acrylic-based material) to prevent the enclosure from being opened. Pay attention to screws that do not turn easily to prevent stripping the head and needing to tap the device.
 
 
-
 > [!TIP]
 > Document markings extensively and go slow when opening an enclosure where you cannot see inside. Cables, wires, and other connectors may be SHORT and can break if accidentally pulled. 
-
 
 #### Circuit Investigation
 
@@ -298,7 +289,6 @@ Using a multimeter for continuity testing helps increase the accuracy and speed 
 * Interface port identification
   * Located any existing (or suspected) debug ports, programming headers, or test points (JTAG, SPI, UART, I2C)
 
-
 #### Component ID
 Component identification is a necessity when working with hardware. If documentation of a device is provided, major components may be included in a manual or Build of Materials (BOM). It is more common to be provided with little or no documentation, in which case an internet search is required.
 
@@ -311,7 +301,6 @@ Researching component datasheets reveals operational parameters, pin configurati
   * Correlate a part number to a component either through visual inspection, documentation, or internet searches. Tools such as a magnifying lens may be needed to read small or faint print on components 
 * Datasheet collection
   * Use identified component IDs to locate data sheets for operation information
-
 
 
 #### PCB Layout
@@ -331,7 +320,6 @@ Multi-layer PCBs may require X-ray imaging or delamination techniques to reveal 
 
 
 
-
 #### Signal Analysis
 Signal analysis is the first step that requires more than general tools and a multimeter. This topic may not be necessary for all categories of reverse engineering, especially if the focus is on firmware extraction or software analysis. However, monitoring and interpreting the electrical signals during device operation is important to understand how communication protocols and data flows across the device or PCB. 
 
@@ -348,7 +336,6 @@ Oscilloscopes and logic analyzers capture timing relationships and signal charac
   * When accessible, communication patterns may be able to be captured during different device operation states. This can sometimes be directly measured from the bus
 
 
-
 #### Power Analysis
 Power analysis examines the device's power consumption patterns to gather information about internal operations. Current measurements during different operational states (ON, OFF, startup, power down, standby, etc.) reveal functional blocks and their activity levels. This analysis also can find where components may be isolated on a board only when the device is powered off (such sections can occur when power is run to a section of the PCB through an IC or MOSFET)
 
@@ -363,7 +350,6 @@ Power supply sequencing is a type of power analysis that helps identify startup 
   * Locate and identify current patterns that might relate to distinctive device states
 
 
-
 #### Side-channel Analysis
 Side-channel analysis exploits unintended information leakage that may happen through electromagnetic emissions, acoustic signatures (or fingerprints), timing variations, and other phenomena.  Electromagnetic analysis (which may need specialized equipment) captures RF emissions, which may correlate with internal device operations. Acoustic analysis monitors sound patterns from the device that could indicate trends in mechanical behavior or electrical switching events (such as mechanical relays switching on, servo movement, etc.). Timing analysis measurements on components can detect the timing of a signal or command through a device that could provide information on execution delays, which could then provide some insight on how components work together within a device. 
 
@@ -374,7 +360,6 @@ Side-channel analysis exploits unintended information leakage that may happen th
   * Measure execution timing variations that might leak information about internal operations
 * Power analysis attack 
   * Analyze power consumption patterns to identify algorithm information and potentially extract cryptographic keys 
-
 
 #### Fault Injection
 Fault injection is a technique where deliberate errors (faults) are introduced into a device or system to observe the following behavior. This can provide insights into error handling, system recovery, and other behavior. Fault injection testing helps researchers understand how systems can and cannot handle unexpected behavior, both of which are valuable. Some techniques include voltage glitching (manipulating the power supply), clock glitching (altering timing signals), and disrupting the normal execution flow in a device. 
@@ -412,7 +397,6 @@ Fault injection is a technique where deliberate errors (faults) are introduced i
 
 
 
-
 ## The Table
 
 The original version of `The Table` featured linking and some overlapping flow chart lines. Since this README does not have that functionality, the main table has been split up based on device categories, tool usage, and topic. No information has been lost, just a little formatting. Some tools may be listed several times in order to keep the associations from `The Flow Chart`. There is a condensed version of the smaller tables at the end of the section as a summary of everything mentioned in this Repository.
@@ -420,16 +404,70 @@ The original version of `The Table` featured linking and some overlapping flow c
 
 
 > [!NOTE]  
-> This repository has been created as the public half of educational materials used in teaching an undergraduate cirriculum. There WILL be some bias towards tools that exist in the hardware lab(s) and penetration testing enviornments that the author(s) have worked in (or taught in). However, efforts have been made to keep this material general in order to provide a reference for beginners.
+> This repository has been created as the public half of educational materials used in teaching an undergraduate curriculum. There WILL be some bias towards tools that exist in the hardware lab(s) and penetration testing environments that the author(s) have worked in (or taught in). However, efforts have been made to keep this material general to provide a reference for beginners.
 
 > [!NOTE]  
-> None of the links provided in this section are affiliate links. They are for reference purposes only. Appearance in this repository is not an endorsement in a tool, software, device, etc.. Paid tools are listed for completeness, but even if is the only tool currently listed in a section that does not mean it is the only tool that exists. This list will be updated periodically, but it should nto be assumed to be exhaustive.
+> None of the links provided in this section are affiliate links. They are for reference purposes only. Appearance in this repository is not an endorsement in a tool, software, device, etc.. Paid tools are listed for completeness, but even if is the only tool currently listed in a section that does not mean it is the only tool that exists. This list will be updated periodically, but it should not be assumed to be exhaustive.
 
 
+### General Tools Table
+
+Not all listed tools are necessary for all approaches. Tools listed in this section have broad applications to hardware and device interfacing. This table is typically linked to support other, specific tables in this repository README. 
 
 
+**Notes about Purchasing Tools:**
+* **Entry-level vs Professional**: 
+  * Many tools have wide price ranges depending on features and quality. 
+  * When you are new to a topic, or experimenting, low-cost tools may be a good alternative (or starting point), especially if you suspect a method will not work or you will not use it often. 
+  * You can always upgrade a tool later if you need something better. However, if you know you will be using a tool frequently and need accuracy, mid-range or higher priced equipment may be a better investment.
+  * Screwdriver sets, especially in the iFixit and generic versions, will likely have components such as spatulas or pry tools included. 
+* **Open Source Alternatives**:
+  * Many software tools have free/open-source equivalents.
+  * If you are unsure if a software tool is the correct approach for a problem, see if the company offers a free or reduced cost trial
+  * When in doubt, email and ask if a software trial is possible
+* **Safety**: 
+  * Always prioritize safety equipment and proper ventilation when working with electronics
+  * Solder, especially when used in professional manufacturing, may contain lead. Take precaution and use a ventilation fan. 
+  * **Buy cheap screwdrivers, not cheap power equipment.** 
+
+> [!TIP]
+> The provided links are for examples and exposure to a range of websites/vendors. Also to not list only Amazon links. Search for a tool online to find the best price, don't just use the links provided. Almost 100% of these tools can be bought for similar quality across listings.
 
 
+| Tool | Purpose | Typical Cost | Examples |
+|------|---------|--------------|----------|
+| **Basic Physical Tools** | | | |
+| Screwdrivers (precision set) | Opening devices, removing screws | $15-30 | • [iFixit Pro Tech Go Toolkit](https://www.ifixit.com/products/pro-tech-go-toolkit)<br>• [Tekton 2830 Precision Screwdriver Set](https://www.amazon.com/TEKTON-2830-Everybit-Precision-Electronic/dp/B009MKGRQA) |
+| Hex key/Allen wrench set | Security screws, specialized fasteners | $15-25 | • LINK <br>• LINK |
+| Torx/security bit set | Tamper-resistant screws | $20-40 | • LINK <br>• LINK  |
+| Plastic opening tools | Non-conductive prying, cable disconnection | $10-15 |• LINK <br>• LINK  |
+| Magnifying glass | Component inspection, marking identification. Handheld or as a stand | $5-50 | • LINK <br>• LINK  |
+| **Electrical Measurement** | | | |
+| Multimeter | Voltage, current, resistance measurements | $20-100 | • [Fluke 87V Industrial Multimeter](https://www.fluke.com/en-us/product/electrical-testing/digital-multimeters/fluke-87v)<br>• [Klein Tools MM600 Multimeter](https://www.kleintools.com/catalog/electrical-testers/auto-ranging-digital-multimeter-mm600) |
+| Oscilloscope (entry-level) | Signal analysis, timing measurements | $300-800 | • LINK <br>• LINK  |
+| Power supply (variable) | Controlled power delivery, voltage testing | $50-200 |• LINK <br>• LINK  |
+| **Workspace and Safety** | | | |
+| Anti-static mat | Protecting sensitive components | $10-40 | • LINK <br>• LINK  |
+| Silicon mat | Heat-resistant work surface | $5-25 | • LINK <br>• LINK  |
+| ESD wrist strap | Personal grounding protection | $10-15 | • LINK <br>• LINK  |
+| Fume extractor | Soldering safety, ventilation | $50-150 |• LINK <br>• LINK  |
+| **Component Handling** | | | |
+| Tweezers (precision set) | Handling small components | $10-20 | • LINK <br>• LINK |
+| IC extraction tools | Removing ICs without damage | $15-30 | • LINK <br>• LINK  |
+| Desoldering braid/wick | Component removal | $5-10 |• LINK <br>• LINK |
+| Flux pen | Improving soldering connections, makes de-soldering easier | $10-15 | • LINK <br>• LINK  |
+| **Wiring and Connections** | | | |
+| Wire strippers | Preparing wires for connections, creat | $10-25 | • LINK <br>• LINK  |
+| Jumper wires | Making temporary connections | $5-15 | • [Elegoo 120pcs Jumper Wires] <br>• [Adafruit Premium Jumper Wires](https://www.adafruit.com/product/1957) |
+| Test leads/probes | Connecting measurement equipment | $20-50 | • [Fluke TL175 TwistGuard Test Leads] <br>• [Pomona 1269 Test Lead Set] |
+| Breadboard | Prototyping, circuit testing | $10-20 | • [Adafruit Full-Size Breadboard](https://www.adafruit.com/product/239)<br>• [Elegoo MB-102 Breadboard]  |
+| Test clips/hooks | Hands-free probing | $15-25 | • LINK <br>• LINK |
+| **Assembly/Modification** | | | |
+| Soldering iron/soldering station | Making connections, modifications | $25-75 | • [Hakko FX888D Soldering Station]( )<br>• [Weller WE1010NA Soldering Station]( ) |
+| Hot air rework station | SMD component removal/installation | $150-400 | • LINK <br>• LINK  |
+| Heat gun | Removing components, shrink tubing | $25-50 | • LINK <br>• LINK  |
+| Electrical tape | Insulation, wire management | $5-10 | • LINK <br>• LINK  |
+| Heat shrink tubing | Wire protection, insulation | $10-20 | • [3M Heat Shrink Tubing Kit](https://www.3m.com/3M/en_US/p/d/cbgnaw011058/)  |
 
 
 
@@ -451,7 +489,6 @@ In this section are a collection of books and websites for further reading. No s
   * short explanation
 
 
-
 **Circuity Basics**
 1. REFERENCE
   * short explanation
@@ -463,7 +500,6 @@ In this section are a collection of books and websites for further reading. No s
   * short explanation
 
 
-
 **Hardware Interfacing Basics**
 1. REFERENCE
   * short explanation
@@ -473,7 +509,6 @@ In this section are a collection of books and websites for further reading. No s
   * short explanation
 4. REFERENCE
   * short explanation
-
 
 **Wireless Basics**
 1. REFERENCE
@@ -506,7 +541,7 @@ In this section are a collection of books and websites for further reading. No s
   * short explanation
 
 **Malware Basics**
-No references to creating, using, or distribting malware will be included in this repository. These references cover the definition and scope of what malware is and what it does.
+No references to creating, using, or distributing malware will be included in this repository. These references cover the definition and scope of what malware is and what it does.
 1. REFERENCE
   * short explanation
 2. REFERENCE
@@ -515,7 +550,6 @@ No references to creating, using, or distribting malware will be included in thi
   * short explanation
 4. REFERENCE
   * short explanation
-
 
 ## Glossary
 This section provides s beginner-friendly launch point to more specific terminology, techniques, and best practices. To keep this accessible, some terms are a bit simplified and may link to other references. 
@@ -527,7 +561,6 @@ This section provides s beginner-friendly launch point to more specific terminol
 * RF
 * SDR
 
-
 ## References
 
 **Making Charts and Tables**
@@ -535,9 +568,9 @@ This section provides s beginner-friendly launch point to more specific terminol
 2. “Creating diagrams - GitHub Docs,” GitHub Docs, 2025. https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams 
 3. "Flowcharts – Basic Syntax,” Mermaidchart.com, May 22, 2025. https://docs.mermaidchart.com/mermaid-oss/syntax/flowchart.html#flowcharts 
 
-
 **Popular Tool Purchasing Sites Used for Tool Descriptions and Pricing**
 NOTE: This is not an endorsement of any particular vendor, manufacturer, or tool. 
+
 
 
 
