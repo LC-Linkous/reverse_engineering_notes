@@ -259,22 +259,28 @@ graph LR;
 
 ### Hardware Analysis
 
-Hardware analysis is the process of examining a physical piece (or pieces) of hardware for information on the device's operation. This is typically the first step in the reverse engineering gprocess as it provides initial informaiton about the device, interfacing, manufacuter, and potential starting points. 
+Hardware analysis is the process of examining a physical piece (or pieces) of hardware for information on the device's operation. This is typically the first step in the reverse engineering process as it provides initial information about the device, interfacing, manufacturer, and potential starting points. 
 
-This part of the process may include dissassembly of the enclosure or device to get a clsoer look at key compoennts such as circuits, chips, power distribution, and industry standard interfacing that already exists on the device. Stypding the physical layout, analyzing connections between components, and understanding the physical interactions between parts of a device happens here.
-
+This part of the process may include disassembly of the enclosure or device to get a closer look at key components such as circuits, chips, power distribution, and industry standard interfacing that already exists on the device. Studying the physical layout, analyzing connections between components, and understanding the physical interactions between parts of a device happens here.
 
 [LINK TO TABLE] <- link tables under the major headers to start with
-
 
 #### Physical Device Access
 
 Accessing the device is the first step of reverse engineering. Some devices are encased in tamper-resistant enclosures, while others are simple to open or may have no enclosure. Documentation of the disassembly process helps maintain evidence of the process and enables reassembly if needed.
 
-Physical access methods range from simple enclosure(case) removal using standard tools, to complex techniques involving specialized equipment for tamper-resistant devices. Or a hacksaw on a plastic enclosure. Or disolving epoxy, glues, and other materials without disolving parts of your connecting components.
+Physical access methods range from simple enclosure(case) removal using standard tools, to complex techniques involving specialized equipment for tamper-resistant devices. Or a hacksaw on a plastic enclosure. Or dissolving epoxy, glues, and other materials without dissolving parts of your connecting components.
 
 > [!TIP]
 > Document markings extensively and go slow when opening an enclosure where you cannot see inside. Cables, wires, and other connectors may be SHORT and can break if accidentally pulled. 
+
+**Task Examples**
+1. Documentation and photography
+  * Take detailed photos of the device from multiple angles before opening. Include all labels, serial numbers, external connectors, and anything else that documents the device in the condition you received it in.
+2. Identify tamper-proof seals or detection methods
+  * Document these. When given permission to open or modify the device, tamper proof seals can be cut through with a sharp blade. Be mindful of components potentially underneath. Screws may have a thread locker (similar to Loctite or another acrylic-based material) to prevent the enclosure from being opened. Pay attention to screws that do not turn easily to prevent stripping the head and needing to tap the device.
+
+
 
 
 #### Circuit Investigation
@@ -285,6 +291,16 @@ The process typically begins with identification of PCBs, daughterboards, and mo
 
 Using a multimeter for continuity testing helps increase the accuracy and speed for identifying paths in both wires and traces. Understanding circuit components, and their operation is a key factor in identifying differences in behavior when the circuit is powered ON, powered OFF, or when components isolated for information extraction.
 
+**Task Examples**
+1. Continuity testing
+  * Use a multimeter to map electrical connections between components, test points, and connectors
+2. Power rail identification
+  * Trace power distribution networks and identify voltage levels at different circuit nodes
+3. Ground plane identification
+  * Trace power and continuity of components to find either a single or isolated ground plane(s). 
+4. Interface port identification
+  * Located any existing (or suspected) debug ports, programming headers, or test points (JTAG, SPI, UART, I2C)
+
 
 #### Component ID
 Component identification is a necessity when working with hardware. If documentation of a device is provided, major components may be included in a manual or Build of Materials (BOM). It is more common to be provided with little or no documentation, in which case an internet search is required.
@@ -293,10 +309,30 @@ This stage of research focuses on cataloging and researching individual parts wi
 
 Researching component datasheets reveals operational parameters, pin configurations, and communication protocols. These datasheets are often acquired by searching databases of vendors or manufacturers. 
 
+**Task Examples**
+1. Part number research
+  * Correlate a part number to a component either through visual inspection, documentation, or internet searches. Tools such as a magnifying lens may be needed to read small or faint print on components 
+2. Datasheet collection
+  * Use identified component IDs to locate data sheets for operation information
+
+
+
 #### PCB Layout
 All devices with sufficiently complicated circuity will have Printed Circuit Boards (PCBs). The analysis of PCB layout is similar to [component ID](#component-ID), except this step focuses on analyzing how components are placed and connected. This includes looking at the traces, figuring out how many layers exist, and understanding how design constraints and choice may effect device security. While it is becoming less common as companies become more security aware (and are willing to spare the expense), it is possible for unintended wireless emissions to be a potential [side channel attack](#side-channel-analysis).
 
 Multi-layer PCBs may require X-ray imaging or delamination techniques to reveal internal routing and hidden components. Delamination techniques are inherently destructive and should be considered only when there are no other options (or multiple copies of the PCB are available). 
+
+**Task Examples**
+1. Identify trace connections
+  * Identify how components interface with traces, and where isolation may occur
+2. Identify potential debug ports and test interfacing
+  * Manufacturer standard debug ports may exist either in several forms, including as contact pads on the board, with soldered pins, or on the edge of a PCB (sometimes called 'mouse bites')
+3. Finding and identifying manufacturer markings
+  * The PCB manufacturer may have put markings on the board that provide information about ports, power, chips, and other components.
+4. Identifying locations for power, signal, or fault injection
+  * Depending on the reverse engineering goals, techniques such as power analysis, signal analysis, or fault injection may be employed. 
+
+
 
 
 #### Signal Analysis
@@ -304,17 +340,54 @@ Signal analysis is the first step that requires more than general tools and a mu
 
 Oscilloscopes and logic analyzers capture timing relationships and signal characteristics across various test points. These test points may be on chips, debug ports, or as conductive pads on the PCB designed specifically for testing. Protocol analysis helps identify standard communication interfaces such as SPI, I2C, UART, or other protocols. Signal integrity measurements can be used to reveal timing constraints, unintentional device chatter, and noise that may affect reliability. 
 
+**Task Examples**
+1. Protocol identification
+  * Use logic analyzers to capture and decode common protocols (SPI, I2C, UART, CAN, etc.)
+2. Timing analysis
+  * Measure signal timing relationships, setup/hold times, and clock domain interactions
+3. Analog waveform capture
+  * Use oscilloscopes to examine analog signals, power supply ripple, and sensor outputs
+4. Communication monitoring
+  * When accessible, communication patterns may be able to be captured during different device operation states. This can sometimes be directly measured from the bus
+
+
 
 #### Power Analysis
 Power analysis examines the device's power consumption patterns to gather information about internal operations. Current measurements during different operational states (ON, OFF, startup, power down, standby, etc.) reveal functional blocks and their activity levels. This analysis also can find where components may be isolated on a board only when the device is powered off (such sections can occur when power is run to a section of the PCB through an IC or MOSFET)
 
 Power supply sequencing is a type of power analysis that helps identify startup procedures and dependencies between subsystems. Voltage rail monitoring can identify switching events and operational modes. Power consumption signatures may leak information about cryptographic operations or internal state transitions.
 
+**Task Examples**
+1. Power signature analysis
+  * Identify distinctive current patterns that might correlate with specific device operations or behavior
+2. Component/section isolation testing
+  * Measure components and traces to determine what components are powered together or communicate together. Identify connected parts of the board. Remove and test components if needed
+3. Monitoring voltage rail
+  * Locate and identify current patterns that might relate to distinctive device states
+
+
+
 #### Side-channel Analysis
 Side-channel analysis exploits unintended information leakage that may happen through electromagnetic emissions, acoustic signatures (or fingerprints), timing variations, and other phenomena.  Electromagnetic analysis (which may need specialized equipment) captures RF emissions, which may correlate with internal device operations. Acoustic analysis monitors sound patterns from the device that could indicate trends in mechanical behavior or electrical switching events (such as mechanical relays switching on, servo movement, etc.). Timing analysis measurements on components can detect the timing of a signal or command through a device that could provide information on execution delays, which could then provide some insight on how components work together within a device. 
+
+**Task Examples**
+1. Electromagnetic emissions capture
+  * Use RF spectrum analyzers or SDR(s) to capture unintended electromagnetic radiation/emissions
+2. Timing attack assessment
+  * Measure execution timing variations that might leak information about internal operations
+3. Power analysis attack 
+  * Analyze power consumption patterns to identify algorithm information and potentially extract cryptographic keys 
 
 
 #### Fault Injection
 Fault injection is a technique where deliberate errors (faults) are introduced into a device or system to observe the following behavior. This can provide insights into error handling, system recovery, and other behavior. Fault injection testing helps researchers understand how systems can and cannot handle unexpected behavior, both of which are valuable. Some techniques include voltage glitching (manipulating the power supply), clock glitching (altering timing signals), and disrupting the normal execution flow in a device. 
+
+**Task Examples**
+1. Voltage glitching
+  * Implement controlled power supply disruptions to cause predictable (and repeatable) faults in device operation
+2. Clock manipulation
+  * Alter timing signals to disrupt normal component coordination and/or execution flow
+3. Input fuzzing
+ * Identify input options. Create malformed or unexpected inputs to test device behavior
 
 
