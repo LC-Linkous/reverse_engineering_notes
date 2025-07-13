@@ -371,11 +371,11 @@ Power supply sequencing is a type of power analysis that helps identify startup 
 Side-channel analysis exploits unintended information leakage that may happen through electromagnetic emissions, acoustic signatures (or fingerprints), timing variations, and other phenomena.  Electromagnetic analysis (which may need specialized equipment) captures RF emissions, which may correlate with internal device operations. Acoustic analysis monitors sound patterns from the device that could indicate trends in mechanical behavior or electrical switching events (such as mechanical relays switching on, servo movement, etc.). Timing analysis measurements on components can detect the timing of a signal or command through a device that could provide information on execution delays, which could then provide some insight on how components work together within a device. 
 
 **Task Examples**
-1. Electromagnetic emissions capture
+* Electromagnetic emissions capture
   * Use RF spectrum analyzers or SDR(s) to capture unintended electromagnetic radiation/emissions
-2. Timing attack assessment
+* Timing attack assessment
   * Measure execution timing variations that might leak information about internal operations
-3. Power analysis attack 
+* Power analysis attack 
   * Analyze power consumption patterns to identify algorithm information and potentially extract cryptographic keys 
 
 
