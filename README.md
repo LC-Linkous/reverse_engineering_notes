@@ -372,11 +372,11 @@ Side-channel analysis exploits unintended information leakage that may happen th
 
 **Task Examples**
 1. Electromagnetic emissions capture
-  * Use RF spectrum analyzers or SDR(s) to capture unintended electromagnetic radiation/emissions
+ * Use RF spectrum analyzers or SDR(s) to capture unintended electromagnetic radiation/emissions
 2. Timing attack assessment
-  * Measure execution timing variations that might leak information about internal operations
+ * Measure execution timing variations that might leak information about internal operations
 3. Power analysis attack 
-  * Analyze power consumption patterns to identify algorithm information and potentially extract cryptographic keys 
+ * Analyze power consumption patterns to identify algorithm information and potentially extract cryptographic keys 
 
 
 #### Fault Injection
