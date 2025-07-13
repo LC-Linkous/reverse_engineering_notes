@@ -14,6 +14,36 @@ As a general disclaimer, do not attempt to access or interface any device or net
   * [Getting Started with Reverse Engineering](#getting-started-with-reverse-engineering)
 * [Tool-Problem-Device Method](#tool-problem-device-method)
 * [The Flow Chart](#the-flow-chart)
+  * [Hardware Analysis](#hardware-analysis)
+    * [Physical Device Access](#physical-device-access)
+    * [Circuit Investigation](#circuit-investigation)
+    * [Component ID](#component-id)
+    * [PCB Layout](#pcb-layout)
+    * [Signal Analysis](#signal-analysis)
+    * [Power Analysis](#power-analysis)
+    * [Side-channel Analysis](#side-channel-analysis)
+    * [Fault Injection](#fault-injection)
+  * [Code Analysis](#code-analysis)
+    * [Software](#software)
+    * [Firmware](#firmware)
+    * [Embedded](#embedded)
+    * [Mobile](#mobile)
+    * [Web Applications](#web-applications)
+    * [Malware Analysis](#malware-analysis)
+  * [Wireless Analysis](#wireless-analysis)
+    * [WiFi](#wifi)
+    * [Bluetooth](#bluetooth)
+    * [RFID/NFC](#rfidnfc)
+    * [Sub-GHz/ISM](#sub-ghzism)
+    * [Cellular/Mobile](#cellularmobile)
+    * [IoT Protocols](#iot-protocols)
+  * [Network Analysis](#network-analysis)
+    * [Protocol Analysis](#protocol-analysis)
+    * [Packet Capture](#packet-capture)
+    * [Network Security](#network-analysis)
+    * [Industrial/IoT Protocols](#industrialiot-protocols)
+    * [Network Infrastructure](#network-infrastructure)
+    * [Network Forensics](#network-forensics)
 * [The Table](#the-table)
 * [Documentation Methods](#documentation-methods)
 * [Bookshelf](#bookshelf)
@@ -288,6 +318,9 @@ Signal Analysis, Power Analysis, Side-channel Analysis, and Fault Injection requ
 Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABLE]() tables.
 
 
+Documentation is extremely important when dealing with hardware analysis. In professional situation, this establishes the condition of the device at all steps, makes the process replicable, and is a key part of evidence gathering for forensics. Organized documentation is also a key part of component identification and cross-referencing how components interact. Complicated devices may include hundreds of components, multiple daughter boards, and complex circuity. 
+
+
 ---
 #### Physical Device Access
 
@@ -422,6 +455,316 @@ Fault injection is a technique where deliberate errors (faults) are introduced i
   * Alter timing signals to disrupt normal component coordination and/or execution flow
 * Input fuzzing
  * Identify input options. Create malformed or unexpected inputs to test device behavior
+
+
+
+### Code Analysis
+Code analysis involves examining software, firmware, and applications to understand functionality, identify vulnerabilities, and extract intellectual property. This process encompasses both static analysis of source code or binaries and dynamic analysis during runtime execution.
+
+
+This topic has been split into the following sub-topics:
+* [Software](#software)
+* [Firmware](#firmware)
+* [Embedded](#embedded)
+* [Mobile](#mobile)
+* [Web Applications](#web-applications)
+* [Malware Analysis](#malware-analysis)
+
+
+Common tools for this topic are listed under [General Tools](#general-tools-table). Signal Analysis, Power Analysis, will require some specialized tools compared to the access and identification topics, but 
+Side-channel Analysis, and Fault Injection are the more difficult topics listed here. 
+
+This section of topics requires some knowledge and skills in:
+*  
+
+  require additional knowledge of:
+*  
+
+Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABLE]() tables.
+
+
+---
+#### Software
+
+Software analysis focuses on examining compiled applications, executables, and libraries to understand program behavior and identify security vulnerabilities. This section is distinct from [Mobile](#mobile) and [Web Applications](#web-applications) in that it focuses on software that can be run on devices that's not nessecarily related to the device operation or a running in a browser. 
+
+
+Static and dynamic analysis can be preformed on software. Static analysis tools parse binary files to extract function calls, API usage, and control flow without executing the code. Dynamic analysis involves running software in controlled environments to monitor system calls, memory usage, and network activity. Reverse engineering techniques like disassembly and decompilation help reconstruct source code logic from compiled binaries (though this is NOT perfect and code is never 100% recreated from decomilers). 
+
+
+* more details + a few tool links
+
+
+
+
+---
+#### Firmware
+
+Firmware is low-level software embedded in hardware, providing basic instructions for device operation and interaction with hardware components. Firmware is typicallystored in non-volatile memory (e.g., flash memory) and is crucial for the device to boot up and perform basic functions. This is distinct from software in that software emcompasses a broader range of programs that interact with the device firmware to perform specific tasks. Firmware analysis examines the low-level software. Ofter times, the device firmware is nor ptovided and must be extracted. Firmware extraction often requires specialized techniques like chip-off analysis, JTAG access, or exploitation of firmware update mechanisms. 
+ 
+Static analysis reveals boot processes, hardware initialization sequences, and embedded cryptographic keys or certificates. Dynamic analysis may involve emulation environments or hardware-in-the-loop testing to observe runtime behavior.
+
+
+* more details + a few tool links
+
+
+
+---
+#### Embedded
+
+Embedded system analysis focuses on resource-constrained devices running specialized software for specific applications like IoT devices, industrial controllers, or automotive systems. These systems often use real-time operating systems or run bare-metal/base code with device or system dependent architectural constraints. 
+
+Analysis techniques must account for limited debugging capabilities, custom hardware interfaces, and timing-sensitive operations. Memory dumps and flash extractions provide access to embedded code that may not be easily accessible through traditional interfaces.
+
+
+
+
+* more details + a few tool links
+
+
+
+---
+#### Mobile
+
+Mobile application analysis examines iOS and Android applications to understand functionality, data handling, and security implementations. Static analysis tools can decompile mobile apps to reveal source code, API calls, and embedded resources like certificates or configuration files. Dynamic analysis involves monitoring app behavior during runtime using debugging tools, network proxies, and system call tracing. 
+
+
+* more details + a few tool links
+* this section also needs a few examples to split up this section and the genreal software section. 
+* these are more of sub-sections to software, but it's better to keep them on the same level because computer apps are not the same as mobile apps
+
+
+
+
+---
+#### Web Applications
+
+Web application analysis examines client-side and server-side code to identify security vulnerabilities and understand application logic. [more specific definitions here]
+
+
+Client-side analysis involves reviewing JavaScript, HTML, and CSS to identify potential cross-site scripting (XSS) vulnerabilities and logic flaws. [talka about cross site scripting since that comes up a lot in docs and write ups]
+
+Server-side analysis may involve source code review, binary analysis, or black-box testing of web services and APIs. 
+
+
+* more details + a few tool links
+* this section also needs a few examples to split up this section and the genreal software section. 
+* common vulnerabilities are  SQL injection, authentication bypass, and logic flaws/business logic flaws
+
+
+
+
+---
+#### Malware Analysis
+
+Malware analysis is distinct from the other code analysis sections in that malware does not natively belong on any system and was written with the purpose to expliot vulnerabilities or human error. 
+Malware analysis involves examining malicious software to understand its behavior, capabilities, and potential impact on target systems or devices. A distinction has not been drawn here between malware used on systems like user ocmputers and infected devices forming bot nets. (work the definitions a little here)
+
+
+Static analysis examines malware samples without execution to identify embedded strings, cryptographic algorithms, and potential indicators of compromise. Dynamic analysis executes malware in controlled sandbox environments to observe runtime behavior, network communications, and system modifications. 
+
+
+Advanced malware may employ anti-analysis techniques like packing, obfuscation, or virtual machine detection that require specialized analysis approaches. (talk about some general safety when looking at devices with malware)
+
+
+ADD NOTE HERE about how this is NOT done in the undergrad course, even if it is a topic that need to be acknolwedged in this taxonomy
+
+
+
+### Wireless Analysis
+Wireless analysis involves monitoring, intercepting, and analyzing radio frequency communications to understand protocols, extract data, and identify security vulnerabilities. 
+
+This topic has been split into the following sub-topics:
+* [WiFi](#wifi)
+* [Bluetooth](#bluetooth)
+* [RFID/NFC](#rfidnfc)
+* [Sub-GHz/ISM](#sub-ghzism)
+* [Cellular/Mobile](#cellularmobile)
+* [IoT Protocols](#iot-protocols)
+
+
+This field requires specialized equipment and knowledge of radio frequency principles and wireless communication standards. It is the second hardest topic of the four topics listed here. Depending on the use-case, some of the common tools from the [General Tools](#general-tools-table) table may be needed, but typically this bulk of this work will be digital rather than physical. The minimum required knowledge in this section is higher than in two previous sections due to it being more specialized. Some approaches, such as working with cellular or mobile equipment, may be inaccessable to the average person either for monetary, infrastructure, or legal reasons. The required knowledge for RF is also not trivial. However, the first three sub-topics listed (Wifi, Bluetooth, and RFID/NFC) have a reasonable entry point for most people. Sub-GHz/ISM is also accessabile as long as regulations for frequency, power, etc.
+
+This section of topics requires some knowledge and skills in:
+*  
+
+  require additional knowledge of:
+*  
+
+Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABLE]() tables.
+
+
+
+---
+#### WiFi
+
+WiFi is based on the IEEE 802.11 wireless networking standards, which define wireless communication standards. WiFi analysis looks at how devices communicate, what devices communicate, the encryption protocols, and how networks are managed.
+
+
+* bulk out the info, add tools plus some examples
+
+
+
+
+---
+#### Bluetooth
+
+
+Bluetooth analysis examines short-range wireless communications including Classic Bluetooth and Bluetooth Low Energy (BLE) protocols.
+
+BLE analysis often involves examining advertising packets, GATT services, and characteristic operations for sensitive data exposure. 
+
+Protocol analysis.... 
+
+Security analysis .... 
+
+* bulk out the info, add tools plus some examples
+
+
+---
+#### RFID/NFC
+
+RFID and NFC analysis examines near-field communication systems used for... 
+
+
+Protocol analysis reveals tag formats, authentication mechanisms, and data structures used in different RFID implementations. 
+
+* add a sentence on RFID specific, NFC specific
+
+
+* bulk out the info, add tools plus some examples
+
+
+
+
+---
+#### Sub-GHz/ISM
+
+Sub-GHz and ISM band analysis examines unlicensed radio communications used in ....
+
+
+
+* licensed vs unlicensed
+* LoRaWAN, Zigbee, and proprietary sensor networks
+* authentication
+
+
+
+
+
+
+---
+#### Cellular/Mobile
+
+Cellular analysis examines mobile network communications including GSM, UMTS, LTE, and 5G protocols for security vulnerabilities and privacy implications. 
+
+
+* authentication, netowrk
+* protocols
+* IMSI, location track, attacks against mobile devices.
+* infrastructure
+
+
+
+---
+#### IoT Protocols
+
+IoT protocol analysis examines communication standards used in Internet of Things devices, including:
+* i1
+* i2
+* i3
+
+
+
+* mention botnets, weak default credentials, access control issues
+* unsupported firmware running on old device
+
+
+
+
+### Network Analysis
+Network analysis involves examining network traffic, protocols, and infrastructure to understand communication patterns, identify security threats, and investigate incidents. This discipline combines protocol expertise with security analysis to provide comprehensive network visibility.
+
+
+
+This topic has been split into the following sub-topics:
+* [Protocol Analysis](#protocol-analysis)
+* [Packet Capture](#packet-capture)
+* [Network Security](#network-analysis)
+* [Industrial/IoT Protocols](#industrialiot-protocols)
+* [Network Infrastructure](#network-infrastructure)
+* [Network Forensics](#network-forensics)
+
+
+Depending on the use-case, some of the common tools from the [General Tools](#general-tools-table) table may be needed, but typically this bulk of this work will be digital rather than physical. The minimum required knowledge in this section is higher than in other sections due to it being more specialized. The scope of this topic is also much broader in scope than the previous topics, which adds to the difficulty for approaching this topic as a beginner.
+
+A sample of skills for this topic includes:
+* OSI model understanding
+  * Familiarity with all 7 layers and how protocols interact across layers
+* TCP/IP stack fundamentals
+  * IPv4/IPv6 addressing, subnetting, routing principles, and packet structure
+* Common protocols & their specifications
+  * HTTP/HTTPS, DNS, DHCP, ARP, ICMP, etc. This includes their message formats
+  * BGP, OSPF, EIGRP, and their configuration and troubleshooting
+* Encoding and serialization
+  * Knowledge of how data is formatted (JSON, XML, binary protocols, ASN.1, etc.)
+* Network hardware, software, topologies and configuration
+  * Understanding of switches, routers, and network device configurations, including the software and operating systems that might be running on servers or machines controlling them
+* Storage and processing
+  *  Knowledge of capture file formats (pcap, pcapng) and storage requirements
+* Capture methodologies
+  * Span ports, TAPs, inline capture, and wireless monitoring techniques
+* Network segmentation
+  * How firewalls, routers, and switches affect traffic visibility
+* Security protocols
+  * SSL/TLS, IPSec, SSH, VPN technologies, and their implementation details
+* Cryptographic fundamentals
+  * Encryption algorithms, hashing, digital signatures, and key management
+* Industrial communication standards & IoT stack
+  * Modbus, DNP3, IEC 61850, OPC-UA, and their specific use cases
+  * MQTT, CoAP, 6LoWPAN, Zigbee, and lightweight communication protocols
+* Digital forensics, logging, recovery
+  * Knowledge of what network devices log and how to access log data
+  * Knowledge of how to piece together network-based incidents
+  * Understanding of network data retention and recovery techniques
+
+
+Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABLE]() tables.
+
+
+---
+#### Protocol Analysis
+
+
+
+
+---
+#### Packet Capture
+
+
+
+
+---
+#### Network Security
+
+
+
+---
+#### Industrial/IoT Protocols
+
+
+
+
+---
+#### Network Infrastructure
+
+
+
+
+
+---
+#### Network Forensics
+
 
 
 
@@ -582,7 +925,7 @@ In this section are a collection of books and websites for further reading. No s
 4. REFERENCE
   * short explanation
 
-**Using Operating Systems**
+**Operating Systems**
 1. REFERENCE
   * short explanation
 2. REFERENCE
@@ -609,6 +952,8 @@ This section provides s beginner-friendly launch point to more specific terminol
 * WORD OR ABBREVIATION - full spelling if abbreviation. definition or usage. 
 
 * DUT
+* ESD
+* OS
 * PCB
 * RF
 * SDR
