@@ -271,8 +271,6 @@ Accessing the device is the first step of reverse engineering. Some devices are 
 
 Physical access methods range from simple enclosure(case) removal using standard tools, to complex techniques involving specialized equipment for tamper-resistant devices. Or a hacksaw on a plastic enclosure. Or dissolving epoxy, glues, and other materials without dissolving parts of your connecting components.
 
-> [!TIP]
-> Document markings extensively and go slow when opening an enclosure where you cannot see inside. Cables, wires, and other connectors may be SHORT and can break if accidentally pulled. 
 
 **Task Examples**
 * Documentation and photography
@@ -281,6 +279,9 @@ Physical access methods range from simple enclosure(case) removal using standard
   * Document these. When given permission to open or modify the device, tamper proof seals can be cut through with a sharp blade. Be mindful of components potentially underneath. Screws may have a thread locker (similar to Loctite or another acrylic-based material) to prevent the enclosure from being opened. Pay attention to screws that do not turn easily to prevent stripping the head and needing to tap the device.
 
 
+
+> [!TIP]
+> Document markings extensively and go slow when opening an enclosure where you cannot see inside. Cables, wires, and other connectors may be SHORT and can break if accidentally pulled. 
 
 
 #### Circuit Investigation
