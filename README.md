@@ -253,7 +253,41 @@ Hardware analysis is the process of examining a physical piece (or pieces) of ha
 
 This part of the process may include disassembly of the enclosure or device to get a closer look at key components such as circuits, chips, power distribution, and industry standard interfacing that already exists on the device. Studying the physical layout, analyzing connections between components, and understanding the physical interactions between parts of a device happens here.
 
-[LINK TO TABLE] <- link tables under the major headers to start with
+This topic has been split into the following sub-topics:
+* [Physical Device Access](#physical-device-access)
+* [Circuit Investigation](#circuit-investigation)
+* [Component ID](#component-id) 
+* [PCB Layout](#pcb-layout)
+* [Signal Analysis](#signal-analysis)
+* [Power Analysis](#power-analysis)
+* [Side-channel Analysis](#side-channel-analysis)
+* [Fault Injection](#fault-injection)
+
+Common tools for this topic are listed under [General Tools](#general-tools-table). Signal Analysis, Power Analysis, will require some specialized tools compared to the access and identification topics, but 
+Side-channel Analysis, and Fault Injection are the more difficult topics listed here. 
+
+This section of topics requires some knowledge and skills in:
+* Documentation
+* Internet research
+* Datasheet reading
+* Disassembly and hand tools
+* Circuit component identification
+* Electrical power safety (for people and devices)
+* Circuit tracing and PCB design understanding
+
+Signal Analysis, Power Analysis, Side-channel Analysis, and Fault Injection require additional knowledge of:
+* Electrical signals and signal processing
+* Signal modulation
+* Power supply operation
+* Oscilloscope operation
+* Voltage measurement
+* Current measurement
+* Packet creation, modification
+* Protocol identification and interfacing
+
+Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABLE]() tables.
+
+
 
 #### Physical Device Access
 
