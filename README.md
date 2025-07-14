@@ -472,12 +472,27 @@ Static and dynamic analysis can be preformed on software. Static analysis tools 
 
 
 **Task Examples**
-*  
-  *  
+* Code or application aquisition
+  * In some cases, the code or application may be provided, but it is common to need to download a program locally before working on it. 
+  * All software should be aquired LEAGALLY
+* Create a clean and reproducable test enviornment
+  * The requirements for this will vary based on teh software being tested.Anything you find or do should be reproducable by another person following your notes
+* Static analysis
+  * A disassembler is used when a program is not running to analyze the software, it operation, etc. 
+* Dynamic analysis
+  * A debugger can be used while code is running. This may not be possible in all cases, but running a debugger on a program can provide insight on memory, runtime behavivior, and shoe where key system interaction or data input/output happens. 
+
 
 
 **Tool Examples**
-
+* Dissassembler
+ * 
+* Debuggers
+ * 
+* Hex Editor
+ * 
+* Other analysis tools for specific purposes:
+ * 
 
 
 
@@ -840,7 +855,7 @@ The original version of `The Table` featured linking and some overlapping flow c
 
 
 ---
-### General Tools Table
+### General Tools
 
 Not all listed tools are necessary for all approaches. Tools listed in this section have broad applications to hardware and device interfacing. This table is typically linked to support other, specific tables in this repository README. 
 
@@ -898,6 +913,48 @@ Not all listed tools are necessary for all approaches. Tools listed in this sect
 | Heat gun | Removing components, shrink tubing | $25-50 | • LINK <br>• LINK  |
 | Electrical tape | Insulation, wire management | $5-10 | • LINK <br>• LINK  |
 | Heat shrink tubing | Wire protection, insulation | $10-20 | • [3M Heat Shrink Tubing Kit](https://www.3m.com/3M/en_US/p/d/cbgnaw011058/)  |
+
+
+---
+### Disassemblers, Decompilers, Debuggers
+
+Three tools are used for code analysis at various levels. Dissasemblers, Decompilers, and Debugers are all tools that can provide important information for how a computer program works. However, that all have different usages and benefits. 
+
+
+
+`Dissasemblers` are programs that convert binary (machine code) into assembly. This is good for analyzing CPU instructions exactly as they are written (and not as they were intended to work). Disassemblers are a good option for embeded systems and firmware, and when you need a precise understanding of exactly what happens in instructions (without interpretation).
+
+`Decompilers` are programs that convert binary into a high-level code that may or may not resemble the original source code. Decompilers will convert binary files into human readable formats, though it does not guarantee that all code will be fully decompiled (large programs usually are not), and the original variable names and developer comments will be lost. Function naming and library imports are generally fine, or at least readible. This approach is useful for getting a quick understanding of program logic, for code review, vulnerability hunting, and when assembly would be too difficult to work wih as a starting point. 
+
+`Debuggers` are integrated into IDEs or other programs. A debugger shows the live execution of a program, often with breakpoints (places where the program can be forced to pause). Using a debugger, you can view the curent instruction being executed, register values (and list of used registers), memory contents (and their addresses), stack traces and history, and program varriables as they are created/assigned/destroyed in realtime. 
+
+
+Some tips on how to choose:
+* Decompilers can be used to get a quick, human-readable version of the code. It likely wont run without major work, but from here you can rebuild the control flow of the program and important functions.
+* Dissasemblers can be used to examine specific functions. Being a direct to assembly, this will have a high accuracy translation, even if it's less intuitive.  
+* Debuggers can be used to verify a program behavior at runtime. This is useful when you understand general program functions and are looking for a specific behavior, variable, or value. This is 100% accurate because it is real program behavior
+
+
+
+* Need to add to the list and check for supported architectures, languages, etc.
+
+
+Dissassmblers:
+
+
+Decompilers:
+
+
+Debuggers:
+
+
+Multiple:
+Ghidra - Disassembler and decompiler
+IDA Pro - Dissasembler, decompiler, and debugger with plugins
+Binary Ninja - Disassembler and decompiler (with some caveats)
+
+
+
 
 
 
