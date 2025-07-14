@@ -284,6 +284,7 @@ Signal Analysis, Power Analysis, Side-channel Analysis, and Fault Injection requ
 * Signal modulation
 * Power supply operation
 * Oscilloscope operation
+* Function generator operation
 * Voltage measurement
 * Current measurement
 * Packet creation, modification
@@ -460,13 +461,22 @@ Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABL
 ---
 #### Software
 
-Software analysis focuses on examining compiled applications, executables, and libraries to understand program behavior and identify security vulnerabilities. This section is distinct from [Mobile](#mobile) and [Web Applications](#web-applications) in that it focuses on software that can be run on devices that's not nessecarily related to the device operation or a running in a browser. 
+Reverse engineering software involves analysing compiled applications, executables, and libraries to understand the functionality, structure, and operation without access to the original code. It is common to only have access to compiled (and potentially obfuscated) code, and to need to get it into a human readable form.
+
+Software analysis is distinct from [Mobile](#mobile) and [Web Applications](#web-applications) in that it focuses on software that can be run on devices that's not nessecarily related to the device operation or a running in a browser. 
+
+This type of code can include desktop applications, system software, executables from different platforms (Windows PE files, Linux ELF binaries, macOS Mach-O files, etc.). 
+
+Static and dynamic analysis can be preformed on software. Static analysis tools parse binary files to extract function calls, API usage, and control flow without executing the code. This analysis is meant to understand the program flow and logic; looking at how the code is put together without the additional complication of it running. Dynamic analysisinvolves running software in controlled environments to monitor system calls, memory usage, network activity, etc.. Reverse engineering techniques like disassembly and decompilation help reconstruct source code logic from compiled binaries (though this is NOT perfect and code is never 100% recreated from decomilers). 
 
 
-Static and dynamic analysis can be preformed on software. Static analysis tools parse binary files to extract function calls, API usage, and control flow without executing the code. Dynamic analysis involves running software in controlled environments to monitor system calls, memory usage, and network activity. Reverse engineering techniques like disassembly and decompilation help reconstruct source code logic from compiled binaries (though this is NOT perfect and code is never 100% recreated from decomilers). 
+
+**Task Examples**
+*  
+  *  
 
 
-* more details + a few tool links
+**Tool Examples**
 
 
 
@@ -474,38 +484,71 @@ Static and dynamic analysis can be preformed on software. Static analysis tools 
 ---
 #### Firmware
 
-Firmware is low-level software embedded in hardware, providing basic instructions for device operation and interaction with hardware components. Firmware is typicallystored in non-volatile memory (e.g., flash memory) and is crucial for the device to boot up and perform basic functions. This is distinct from software in that software emcompasses a broader range of programs that interact with the device firmware to perform specific tasks. Firmware analysis examines the low-level software. Ofter times, the device firmware is nor ptovided and must be extracted. Firmware extraction often requires specialized techniques like chip-off analysis, JTAG access, or exploitation of firmware update mechanisms. 
+Firmware is low-level software embedded in hardware, providing basic instructions for device operation and interaction with hardware components. Firmware is typicallystored in non-volatile memory (e.g., flash memory) and is crucial for the device to boot up and perform basic functions. This section is distinct from [software](#software) in that software (and software analysis) emcompasses a broader range of programs that interact with the device firmware to perform specific tasks. 
+
+Unlike analyzing software related to applications, firmware analysis examines the low-level software that provides control and functionality for hardware devices. This includes BIOS/UEFI, router firmware, IoT device firmware, embedded system software, bootloaders, etc.. Often times, the device firmware is not ptovided and must be extracted. Firmware extraction often requires specialized techniques like chip-off analysis, JTAG access, or exploitation of firmware update mechanisms. 
  
-Static analysis reveals boot processes, hardware initialization sequences, and embedded cryptographic keys or certificates. Dynamic analysis may involve emulation environments or hardware-in-the-loop testing to observe runtime behavior.
+Static analysis of firmware can reveal boot processes, hardware initialization sequences, and embedded cryptographic keys or certificates. Dynamic analysis may involve emulation environments or hardware-in-the-loop testing to observe runtime behavior.
 
 
-* more details + a few tool links
+
+**Task Examples**
+*  
+  *  
+
+
+**Tool Examples**
+
+
 
 
 
 ---
 #### Embedded
 
-Embedded system analysis focuses on resource-constrained devices running specialized software for specific applications like IoT devices, industrial controllers, or automotive systems. These systems often use real-time operating systems or run bare-metal/base code with device or system dependent architectural constraints. 
 
-Analysis techniques must account for limited debugging capabilities, custom hardware interfaces, and timing-sensitive operations. Memory dumps and flash extractions provide access to embedded code that may not be easily accessible through traditional interfaces.
-
+An embedded system is specilaized type of computer system with a dedicated function. An embedded device typically has a comination of a computer processor, memory, and perhipheral interfacing (sometimes GPIO). These devices are often resource-constrained by design, making them well suited for low-cost, specific functions either individually or as part of a coordinated system. Some applications for this type of technology is  specific applications like IoT devices, medical devices, industrial controllers, and automotive systems.
 
 
+These systems often use real-time operating systems or run bare-metal/base code with device or system dependent architectural constraints. 
+[add more about what this means for research purposes]
 
-* more details + a few tool links
+
+*FPGA connection
+
+
+
+**Task Examples**
+*  
+  *  
+
+
+**Tool Examples**
+
+
 
 
 
 ---
 #### Mobile
 
-Mobile application analysis examines iOS and Android applications to understand functionality, data handling, and security implementations. Static analysis tools can decompile mobile apps to reveal source code, API calls, and embedded resources like certificates or configuration files. Dynamic analysis involves monitoring app behavior during runtime using debugging tools, network proxies, and system call tracing. 
+Mobile application analysis examines iOS and Android applications to understand functionality, data handling, and implementations (including security). This type of reverse engineering requires understanding platform-specific architectures, runtime environments, and occasionally having access to specfic equipment. Some types of application (App) an dprogram analysis can be done without a cellular connection, but for others such as a messaging-based applications a cellular connection may be required for full operation. 
+
+Static analysis tools can decompile mobile apps to reveal source code, API calls, and embedded resources like certificates or configuration files. Dynamic analysis involves monitoring app behavior during runtime, similar to other code analysis topics, but this can include watching activity on a cellular network. 
+
+Reverse engineering or security research done on a mobile device may be contained to an emulation enviornment. 
 
 
-* more details + a few tool links
-* this section also needs a few examples to split up this section and the genreal software section. 
-* these are more of sub-sections to software, but it's better to keep them on the same level because computer apps are not the same as mobile apps
+In cases where a cellular connection is needed, testing must either be done in isolation with specialized equipment or professionally with networking tools. Research involving cellular data is not typically acessable to the average person.
+
+
+**Task Examples**
+*  
+  *  
+
+
+**Tool Examples**
+
 
 
 
@@ -516,7 +559,7 @@ Mobile application analysis examines iOS and Android applications to understand 
 Web application analysis examines client-side and server-side code to identify security vulnerabilities and understand application logic. [more specific definitions here]
 
 
-Client-side analysis involves reviewing JavaScript, HTML, and CSS to identify potential cross-site scripting (XSS) vulnerabilities and logic flaws. [talka about cross site scripting since that comes up a lot in docs and write ups]
+Client-side analysis involves reviewing JavaScript, HTML, and CSS to identify potential cross-site scripting (XSS) vulnerabilities and logic flaws. [talk about cross site scripting since that comes up a lot in docs and write ups]
 
 Server-side analysis may involve source code review, binary analysis, or black-box testing of web services and APIs. 
 
@@ -524,6 +567,15 @@ Server-side analysis may involve source code review, binary analysis, or black-b
 * more details + a few tool links
 * this section also needs a few examples to split up this section and the genreal software section. 
 * common vulnerabilities are  SQL injection, authentication bypass, and logic flaws/business logic flaws
+
+
+
+**Task Examples**
+*  
+  *  
+
+
+**Tool Examples**
 
 
 
@@ -542,6 +594,15 @@ Advanced malware may employ anti-analysis techniques like packing, obfuscation, 
 
 
 ADD NOTE HERE about how this is NOT done in the undergrad course, even if it is a topic that need to be acknolwedged in this taxonomy
+
+
+**Task Examples**
+*  
+  *  
+
+
+**Tool Examples**
+
 
 
 
