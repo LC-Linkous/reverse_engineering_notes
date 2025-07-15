@@ -552,24 +552,32 @@ See the following tables for specific tool examples:
 #### Embedded
 
 
-An embedded system is specialized type of computer system with a dedicated function. An embedded device typically has a combination of a computer processor, memory, and peripheral interfacing (sometimes GPIO). These devices are often resource-constrained by design, making them well suited for low-cost, specific functions either individually or as part of a coordinated system. Some applications for this type of technology are specific applications like IoT devices, medical devices, industrial controllers, and automotive systems.
+An embedded device is specialized type of device with in a system that has a dedicated function. An embedded device typically has a combination of a computer processor, memory, and peripheral interfacing (sometimes GPIO). These devices are often resource-constrained by design, making them well suited for low-cost, specific functions either individually or as part of a coordinated system. Some uses for this type of technology are specific applications like IoT devices, medical devices, industrial controllers, and automotive systems.
 
+"embeded code analysis" is not one type of code analysis. An embedded device will have firmware, program code, etc. running on it depending on the application. These systems often use real-time operating systems or run bare-metal(base code) with device- or system-dependent architectural constraints. Researching the specific device, and its applicatiion, will drive what kind of code analysis you will be starting with. 
 
-These systems often use real-time operating systems or run bare-metal/base code with device or system dependent architectural constraints. 
-[add more about what this means for research purposes]
+For reverse engineering purproses, when approaching a complicated device it may be nessecary to treat the analysis as multiple (parallel) approaches for firmware, software, and hardware analysis until you formulate an approach for a specific goal.
 
+For example, Field-Programmable Gate Arrays (FPGAs) and microcontrollers are both popular in components in embedded systems, but operate very differently. Microcontrollers are single-chip computers that have a processor, memory, and peripherals on a single (simple cut) PCB board. These boards are used for simple control tasks, sensor interfacing, basic data processing, and maybe some communication if in a distributed control system (wireless communication is probably a seperate chip or peripheral board). FPGAs perform specific digial logic functions, can process at high speeds and in parallel, and can handle networking, image processing, and AI/ML applications (memory constraints considered). FPGAs are not, themselves, embedded 
 
-*FPGA connection
-
+These two devices may even be used together in a coordinated system, or on the same chip in the cases of System on a Chip FPGAs (SoC FPGAs). Typically the computational power and cost for an application is a deciding factor for which option is used. 
 
 
 **Task Examples**
-*  
-  *  
+* Identify major components of the system
+* Identify the processor and memory
+  * Not just the location on the board, but the datasheet
+* Identify the peripherals 
+* Identify potential interface options
+* Obtain source code, firmware, binary, etc. for analysis
+* (This is where the tasks split based on what is accessable) 
 
 
 
-
+See the following tables for specific tool examples:
+* Hardware table
+* Firmware table
+* Software table
 
 
 
@@ -580,19 +588,33 @@ Mobile application analysis examines iOS and Android applications to understand 
 
 Static analysis tools can decompile mobile apps to reveal source code, API calls, and embedded resources like certificates or configuration files. Dynamic analysis involves monitoring app behavior during runtime, similar to other code analysis topics, but this can include watching activity on a cellular network. 
 
-Reverse engineering or security research done on a mobile device may be contained to an emulation environment. 
-
-
-In cases where a cellular connection is needed, testing must either be done in isolation with specialized equipment or professionally with networking tools. Research involving cellular data is not typically accessible to the average person.
+Reverse engineering or security research done on a mobile device may be contained to an emulation environment due to hardware needs. In cases where a cellular connection is needed, testing must either be done in isolation with specialized equipment or professionally with networking tools. Research involving cellular data is not typically accessible to the average person.
 
 
 **Task Examples**
-*  
-  *  
+* Identify major components of the system
+* Identify what is being tested or analyzed
+  * Only the app
+  * The app and the hardware
+  * The app, hardware, and WiFi/Bluetooth/NFC/etc. connection
+  * The app, hardware, and cellular connection
+  * The firmware/OS, hardware
+  * The firmware/OS, hardware, WiFi/Bluetooth/NFC/etc. connection
+  * the firmware/OS, hardware, and cellular connection
+  * etc... 
+  * (this is where major divergence in the process happens)
+* If working with hardware, identify OS, the processor, and memory
+* If working with sofware or firmware, identify versions
+  * Obtain source code, firmware, binary, etc. for analysis
+* (This is where the tasks split based on what is accessable) 
 
 
-**Tool Examples**
 
+See the following tables for specific tool examples:
+* Hardware table
+* Firmware table
+* Software table
+* Cellular table
 
 
 
