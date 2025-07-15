@@ -641,7 +641,9 @@ Server-side analysis may involve source code review, binary analysis, or black-b
   *  
 
 
-**Tool Examples**
+See the following tables for specific tool examples:
+* 
+* 
 
 
 
@@ -1040,20 +1042,20 @@ In this section are a collection of books and websites for further reading. No s
 (No PDFs are provided through this repository or from the authors of this repository)
 
 **Multi-Topic References**
-1. [https://www.allaboutcircuits.com/](https://www.allaboutcircuits.com/)
+* [https://www.allaboutcircuits.com/](https://www.allaboutcircuits.com/)
   * Has topics for circuity tutorials, embedded work, cybersecurity
 
 
 **Circuity Basics**
-1. electronics Tutorials, “Basic Electronics Tutorials,” Basic Electronics Tutorials, 2019. https://www.electronics-tutorials.ws/
+*  electronics Tutorials, “Basic Electronics Tutorials,” Basic Electronics Tutorials, 2019. https://www.electronics-tutorials.ws/
   * librry of tutorials for everything related to DC circuits, and some AC
-2. “A BETTER way to learn electronics,” CircuitBread. https://www.circuitbread.com/
+* “A BETTER way to learn electronics,” CircuitBread. https://www.circuitbread.com/
   * "Circuits 101". Tutorials on circuits, components, calculations, and measurements
   * [https://www.circuitbread.com/tutorials/series/circuits-101](https://www.circuitbread.com/tutorials/series/circuits-101)
 
 
 **Hardware Interfacing Basics**
-1. Manufactuer standard interfaces. JTAG, SPI, UART, etc.
+* Manufactuer standard interfaces. JTAG, SPI, UART, etc.
   * “The art of finding JTAG on PCBs | Pen Test Partners,” www.pentestpartners.com. https://www.pentestpartners.com/security-blog/the-art-of-finding-jtag-on-pcbs/
   * “The Newbie’s Guide To JTAG,” Hackaday, Mar. 18, 2023. Available: https://hackaday.com/2020/02/24/the-newbies-guide-to-jtag/
   * S. Mohieldin, “Hardware Hacking 101: Identifying and Verifying JTAG on a Device,” River Loop Security, May 27, 2021. https://riverloopsecurity.com/blog/2021/05/hw-101-jtag-part2/ 
@@ -1062,21 +1064,21 @@ In this section are a collection of books and websites for further reading. No s
   * J. M. | Arduino | 5, “How to Set Up UART Communication on the Arduino,” Circuit Basics, May 12, 2020. https://www.circuitbasics.com/how-to-set-up-uart-communication-for-arduino/
 
 **SDR Basics**
-1. Wikipedia Contributors, “Software-defined radio,” Wikipedia, Dec. 30, 2019. https://en.wikipedia.org/wiki/Software-defined_radio
+*  Wikipedia Contributors, “Software-defined radio,” Wikipedia, Dec. 30, 2019. https://en.wikipedia.org/wiki/Software-defined_radio
   * good for some quick definitions
-2. “Tutorials - GNU Radio,” wiki.gnuradio.org. https://wiki.gnuradio.org/index.php/Tutorials
+*  “Tutorials - GNU Radio,” wiki.gnuradio.org. https://wiki.gnuradio.org/index.php/Tutorials
   * operating SDRs with GNU Radio
 
 **Malware Basics**
 No references to creating, using, or distributing malware will be included in this repository. These references cover the definition and scope of what malware is and what it does.
-1. “What is Malware?,” Cisco. https://www.cisco.com/site/in/en/learn/topics/security/what-is-malware.html
-2. C. C. Editor, “malware - Glossary | CSRC,” csrc.nist.gov. https://csrc.nist.gov/glossary/term/malware
+*  “What is Malware?,” Cisco. https://www.cisco.com/site/in/en/learn/topics/security/what-is-malware.html
+*  C. C. Editor, “malware - Glossary | CSRC,” csrc.nist.gov. https://csrc.nist.gov/glossary/term/malware
 
 
 **Wireless Basics**
-1. “Microwave and RF Information for Engineers | Microwave Calculators, Encyclopedia, Discussion Forum,” www.microwaves101.com. https://www.microwaves101.com/
-2. “Antenna Theory Tutorial - Tutorialspoint,” www.tutorialspoint.com. https://www.tutorialspoint.com/antenna_theory/index.htm
-3. “Antenna Basics,” www.antenna-theory.com. https://www.antenna-theory.com/basics/main.php
+*  “Microwave and RF Information for Engineers | Microwave Calculators, Encyclopedia, Discussion Forum,” www.microwaves101.com. https://www.microwaves101.com/
+*  “Antenna Theory Tutorial - Tutorialspoint,” www.tutorialspoint.com. https://www.tutorialspoint.com/antenna_theory/index.htm
+*  “Antenna Basics,” www.antenna-theory.com. https://www.antenna-theory.com/basics/main.php
 
 
 
@@ -1085,12 +1087,20 @@ This section provides s beginner-friendly launch point to more specific terminol
 
 * WORD OR ABBREVIATION - full spelling if abbreviation. definition or usage. 
 
+* Debugger
+* Decompiler
 * DUT
+* Embedded
 * ESD
+* Firmware
+* Hardware
 * OS
 * PCB
 * RF
 * SDR
+* Software
+* WiFi
+
 
 ## References
 
