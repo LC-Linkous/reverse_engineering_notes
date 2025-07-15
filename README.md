@@ -358,7 +358,7 @@ Researching component datasheets reveals operational parameters, pin configurati
 ---
 #### PCB Layout
 
-All devices with sufficiently complicated circuity will have Printed Circuit Boards (PCBs). The analysis of PCB layout is similar to [component ID](#component-ID), except this step focuses on analyzing how components are placed and connected. This includes looking at the traces, figuring out how many layers exist, and understanding how design constraints and choice may effect device security. While it is becoming less common as companies become more security aware (and are willing to spare the expense), it is possible for unintended wireless emissions to be a potential [side channel attack](#side-channel-analysis).
+All devices with sufficiently complicated circuity will have Printed Circuit Boards (PCBs). The analysis of PCB layout is similar to [component ID](#component-ID), except this step focuses on analyzing how components are placed and connected. This includes looking at the traces, figuring out how many layers exist, and understanding how design constraints and choice may affect device security. While it is becoming less common as companies become more security aware (and are willing to spare the expense), it is possible for unintended wireless emissions to be a potential [side-channel attack](#side-channel-analysis).
 
 Multi-layer PCBs may require X-ray imaging or delamination techniques to reveal internal routing and hidden components. Delamination techniques are inherently destructive and should be considered only when there are no other options (or multiple copies of the PCB are available). 
 
@@ -366,7 +366,7 @@ Multi-layer PCBs may require X-ray imaging or delamination techniques to reveal 
 * Identify trace connections
   * Identify how components interface with traces, and where isolation may occur
 * Identify potential debug ports and test interfacing
-  * Manufacturer standard debug ports may exist either in several forms, including as contact pads on the board, with soldered pins, or on the edge of a PCB (sometimes called 'mouse bites')
+  * Manufacturer standard debug ports may exist either in several forms; including as contact pads on the board, with soldered pins, or on the edge of a PCB (sometimes called 'mouse bites')
 * Finding and identifying manufacturer markings
   * The PCB manufacturer may have put markings on the board that provide information about ports, power, chips, and other components.
 * Identifying locations for power, signal, or fault injection
@@ -376,7 +376,7 @@ Multi-layer PCBs may require X-ray imaging or delamination techniques to reveal 
 ---
 #### Signal Analysis
 
-Signal analysis is the first step that requires more than general tools and a multimeter. This topic may not be necessary for all categories of reverse engineering, especially if the focus is on firmware extraction or software analysis. However, monitoring and interpreting the electrical signals during device operation is important to understand how communication protocols and data flows across the device or PCB. 
+Signal analysis is the first step that requires more than general tools and a multimeter. This topic may not be necessary for all categories of reverse engineering, especially if the focus is on firmware extraction or software analysis. However, monitoring and interpreting the electrical signals during device operation is important to understand how communication protocols and data flow across the device or PCB. 
 
 Oscilloscopes and logic analyzers capture timing relationships and signal characteristics across various test points. These test points may be on chips, debug ports, or as conductive pads on the PCB designed specifically for testing. Protocol analysis helps identify standard communication interfaces such as SPI, I2C, UART, or other protocols. Signal integrity measurements can be used to reveal timing constraints, unintentional device chatter, and noise that may affect reliability. 
 
@@ -457,17 +457,17 @@ This section of topics requires some knowledge and skills in:
 * Static analysis
 * Dynamic analysis
 * Binary file formats
-* Ientifying (processor) architecture
+* Identifying (processor) architecture
 * Understanding memory layouts
 * Understanding hardware interfacing and what kind of data may be collected or transmitted
-  * This is important for anything that sends or recieves data.
+  * This is important for anything that sends or receives data.
 * Understanding what the boot process is
 * Hardware abstraction layers
 * Memory management, manipulating files
 * Awareness of some basic code obfuscation techniques
-  * Or at least understanding how this is generally implemented and that you will not always be able to recreate everything unless oyu have the original source code
+  * Or at least understanding how this is generally implemented and that you will not always be able to recreate everything unless you have the original source code
 
-The listed topics will also require specific knowledge of how to use application (topic) specific decompilers, dissasemblers, debuggers, etc. with the appropriate architecture.  In many cases, you will need to aquire the code in order to analyze it (legally!!!), and it may take multiple steps (and multiple attempts) in order to get something readable.
+The listed topics will also require specific knowledge of how to use application (topic) specific decompilers, disassemblers, debuggers, etc. with the appropriate architecture.  In many cases, you will need to acquire the code in order to analyze it (legally!!!), and it may take multiple steps (and multiple attempts) in order to get something readable.
 
 > [!TIP]
 > Related to the undergraduate course this material is meant to support: if you pirate any software for the class, you fail the assignment. If you pirate any software and put it on the lab server(s), you fail the class. This also applies to mishandling malware and experimenting on your classmates.
@@ -483,26 +483,26 @@ Some tools and software for these, are listed in the [Disassemblers, Decompilers
 ---
 #### Software
 
-Reverse engineering software involves analysing compiled applications, executables, and libraries to understand the functionality, structure, and operation without access to the original code. It is common to only have access to compiled (and potentially obfuscated) code, and to need to get it into a human readable form.
+Reverse engineering software involves analyzing compiled applications, executables, and libraries to understand the functionality, structure, and operation without access to the original code. It is common to only have access to compiled (and potentially obfuscated) code, and to need to get it into a human readable form.
 
-Software analysis is distinct from [Mobile](#mobile) and [Web Applications](#web-applications) in that it focuses on software that can be run on devices that's not nessecarily related to the device operation or a running in a browser. 
+Software analysis is distinct from [Mobile](#mobile) and [Web Applications](#web-applications) in that it focuses on software that can be run on devices that's not necessarily related to the device operation or a running in a browser. 
 
 This type of code can include desktop applications, system software, executables from different platforms (Windows PE files, Linux ELF binaries, macOS Mach-O files, etc.). 
 
-Static and dynamic analysis can be preformed on software. Static analysis tools parse binary files to extract function calls, API usage, and control flow without executing the code. This analysis is meant to understand the program flow and logic; looking at how the code is put together without the additional complication of it running. Dynamic analysisinvolves running software in controlled environments to monitor system calls, memory usage, network activity, etc.. Reverse engineering techniques like disassembly and decompilation help reconstruct source code logic from compiled binaries (though this is NOT perfect and code is never 100% recreated from decomilers). 
+Static and dynamic analysis can be performed on software. Static analysis tools parse binary files to extract function calls, API usage, and control flow without executing the code. This analysis is meant to understand the program flow and logic; looking at how the code is put together without the additional complication of it running. Dynamic analysis involves running software in controlled environments to monitor system calls, memory usage, network activity, etc.. Reverse engineering techniques like disassembly and decompilation help reconstruct source code logic from compiled binaries (though this is NOT perfect and code is never 100% recreated from decompilers). 
 
 
 
 **Task Examples**
-* Code or application aquisition
+* Code or application acquisition
   * In some cases, the code or application may be provided, but it is common to need to download a program locally before working on it. 
-  * All software should be aquired LEAGALLY
-* Create a clean and reproducable test enviornment
-  * The requirements for this will vary based on teh software being tested.Anything you find or do should be reproducable by another person following your notes
+  * All software should be acquired LEAGALLY
+* Create a clean and reproducible test environment
+  * The requirements for this will vary based on the software being tested. Anything you find or do should be reproducible by another person following your notes
 * Static analysis
   * A disassembler is used when a program is not running to analyze the software, it operation, etc. 
 * Dynamic analysis
-  * A debugger can be used while code is running. This may not be possible in all cases, but running a debugger on a program can provide insight on memory, runtime behavivior, and shoe where key system interaction or data input/output happens. 
+  * A debugger can be used while code is running. This may not be possible in all cases, but running a debugger on a program can provide insight on memory, runtime behavior, and shoe where key system interaction or data input/output happens. 
 
 
 See the following tables for specific tool examples:
@@ -513,26 +513,26 @@ See the following tables for specific tool examples:
 ---
 #### Firmware
 
-Firmware is low-level software embedded in hardware, providing basic instructions for device operation and interaction with hardware components. Firmware is typicallystored in non-volatile memory (e.g., flash memory) and is crucial for the device to boot up and perform basic functions. This section is distinct from [software](#software) in that software (and software analysis) emcompasses a broader range of programs that interact with the device firmware to perform specific tasks. 
+Firmware is low-level software embedded in hardware, providing basic instructions for device operation and interaction with hardware components. Firmware is typically stored in non-volatile memory (e.g., flash memory) and is crucial for the device to boot up and perform basic functions. This section is distinct from [software](#software) in that software (and software analysis) encompasses a broader range of programs that interact with the device firmware to perform specific tasks. 
 
-Unlike analyzing software related to applications, firmware analysis examines the low-level software that provides control and functionality for hardware devices. This includes BIOS/UEFI, router firmware, IoT device firmware, embedded system software, bootloaders, etc.. Often times, the device firmware is not ptovided and must be extracted. Firmware extraction often requires specialized techniques like chip-off analysis, JTAG access, or exploitation of firmware update mechanisms. 
+Unlike analyzing software related to applications, firmware analysis examines the low-level software that provides control and functionality for hardware devices. This includes BIOS/UEFI, router firmware, IoT device firmware, embedded system software, bootloaders, etc.. Often times, the device firmware is not provided and must be extracted. Firmware extraction often requires specialized techniques like chip-off analysis, JTAG access, or exploitation of firmware update mechanisms. 
  
 Static analysis of firmware can reveal boot processes, hardware initialization sequences, and embedded cryptographic keys or certificates. Dynamic analysis may involve emulation environments or hardware-in-the-loop testing to observe runtime behavior.
 
 
-Aquiring firmware is typically the first step in this process. Unless you have been given, or are able to download the firmware, you will need to physically access a device and then extract the firmware.
+Acquiring firmware is typically the first step in this process. Unless you have been given, or are able to download the firmware, you will need to physically access a device and then extract the firmware.
 
-Physical firmware extraction can happen in several different ways, and these are all dependent on the connections avilable on the physical device. Some of these are:
+Physical firmware extraction can happen in several different ways, and these are all dependent on the connections available on the physical device. Some of these are:
 * ISP (In-System Programming) - 
-  * Check the PCB for any ports that might be used by the manufactuer. Check to see if there is a manual for the device for repair. You may be able to use a debug or repair mode to access firmware.
+  * Check the PCB for any ports that might be used by the manufacturer. Check to see if there is a manual for the device for repair. You may be able to use a debug or repair mode to access firmware.
 * JTAG - 
   * You may be able to connect to JTAG pins on the PCB to read firmware directly from flash memory
 * UART - 
-  * If serial is avilable, either with an existing port or as pins on the board, you may be able to access the bootloader or debug console to dump the firmware. 
+  * If serial is available, either with an existing port or as pins on the board, you may be able to access the bootloader or debug console to dump the firmware. 
 * SPI (Serial Peripheral Interface)-
-  * If pins or pads on the PCB are avilable, you may be able to acess the firmware by using an SPI progammers to read firmware from external flash chips.
+  * If pins or pads on the PCB are available, you may be able to access the firmware by using an SPI programmers to read firmware from external flash chips.
 * I2C/SPI Sniffing - 
-  * It may be possible to capture firmware during the boot process or during update. Interupting the boot process or an update process may brick your device, so use this method with caution. 
+  * It may be possible to capture firmware during the boot process or during update. Interrupting the boot process or an update process may brick your device, so use this method with caution. 
 
 It is important to remember that not all methods will work with all devices. Even if a physical access method (for instance, JTAG) exists, it may not be connected to memory storage. It could be connected to a sensor. Or power control. Or actuator. Or any number of other chips. 
 
@@ -543,7 +543,7 @@ See the following tables for specific tool examples:
 
 
 **Task Examples**
-* Search for firmware online via the manufactuerer 
+* Search for firmware online via the manufacturer 
 * Locate and identify physical interface ports/pins and attempt to physically extract
 
  
@@ -552,7 +552,7 @@ See the following tables for specific tool examples:
 #### Embedded
 
 
-An embedded system is specilaized type of computer system with a dedicated function. An embedded device typically has a comination of a computer processor, memory, and perhipheral interfacing (sometimes GPIO). These devices are often resource-constrained by design, making them well suited for low-cost, specific functions either individually or as part of a coordinated system. Some applications for this type of technology is  specific applications like IoT devices, medical devices, industrial controllers, and automotive systems.
+An embedded system is specialized type of computer system with a dedicated function. An embedded device typically has a combination of a computer processor, memory, and peripheral interfacing (sometimes GPIO). These devices are often resource-constrained by design, making them well suited for low-cost, specific functions either individually or as part of a coordinated system. Some applications for this type of technology are specific applications like IoT devices, medical devices, industrial controllers, and automotive systems.
 
 
 These systems often use real-time operating systems or run bare-metal/base code with device or system dependent architectural constraints. 
@@ -568,7 +568,6 @@ These systems often use real-time operating systems or run bare-metal/base code 
   *  
 
 
-**Tool Examples**
 
 
 
@@ -577,14 +576,14 @@ These systems often use real-time operating systems or run bare-metal/base code 
 ---
 #### Mobile
 
-Mobile application analysis examines iOS and Android applications to understand functionality, data handling, and implementations (including security). This type of reverse engineering requires understanding platform-specific architectures, runtime environments, and occasionally having access to specfic equipment. Some types of application (App) an dprogram analysis can be done without a cellular connection, but for others such as a messaging-based applications a cellular connection may be required for full operation. 
+Mobile application analysis examines iOS and Android applications to understand functionality, data handling, and implementations (including security). This type of reverse engineering requires understanding platform-specific architectures, runtime environments, and occasionally having access to specific equipment. Some types of application (app) and program analysis can be done without a cellular connection, but for others such as a messaging-based applications a cellular connection may be required for full operation. 
 
 Static analysis tools can decompile mobile apps to reveal source code, API calls, and embedded resources like certificates or configuration files. Dynamic analysis involves monitoring app behavior during runtime, similar to other code analysis topics, but this can include watching activity on a cellular network. 
 
-Reverse engineering or security research done on a mobile device may be contained to an emulation enviornment. 
+Reverse engineering or security research done on a mobile device may be contained to an emulation environment. 
 
 
-In cases where a cellular connection is needed, testing must either be done in isolation with specialized equipment or professionally with networking tools. Research involving cellular data is not typically acessable to the average person.
+In cases where a cellular connection is needed, testing must either be done in isolation with specialized equipment or professionally with networking tools. Research involving cellular data is not typically accessible to the average person.
 
 
 **Task Examples**
@@ -628,8 +627,8 @@ Server-side analysis may involve source code review, binary analysis, or black-b
 ---
 #### Malware Analysis
 
-Malware analysis is distinct from the other code analysis sections in that malware does not natively belong on any system and was written with the purpose to expliot vulnerabilities or human error. 
-Malware analysis involves examining malicious software to understand its behavior, capabilities, and potential impact on target systems or devices. A distinction has not been drawn here between malware used on systems like user ocmputers and infected devices forming bot nets. (work the definitions a little here)
+Malware analysis is distinct from the other code analysis sections in that malware does not natively belong on any system and was written with the purpose to exploit vulnerabilities or human error. 
+Malware analysis involves examining malicious software to understand its behavior, capabilities, and potential impact on target systems or devices. A distinction has not been drawn here between malware used on systems like user computers and infected devices forming bot nets. (work the definitions in a little here)
 
 
 Static analysis examines malware samples without execution to identify embedded strings, cryptographic algorithms, and potential indicators of compromise. Dynamic analysis executes malware in controlled sandbox environments to observe runtime behavior, network communications, and system modifications. 
@@ -638,7 +637,7 @@ Static analysis examines malware samples without execution to identify embedded 
 Advanced malware may employ anti-analysis techniques like packing, obfuscation, or virtual machine detection that require specialized analysis approaches. (talk about some general safety when looking at devices with malware)
 
 
-ADD NOTE HERE about how this is NOT done in the undergrad course, even if it is a topic that need to be acknolwedged in this taxonomy
+ADD NOTE HERE about how this is NOT done in the undergrad course, even if it is a topic that needs to be acknowledged in this taxonomy
 
 
 **Task Examples**
@@ -663,7 +662,7 @@ This topic has been split into the following sub-topics:
 * [IoT Protocols](#iot-protocols)
 
 
-This field requires specialized equipment and knowledge of radio frequency principles and wireless communication standards. It is the second hardest topic of the four topics listed here. Depending on the use-case, some of the common tools from the [General Tools](#general-tools-table) table may be needed, but typically this bulk of this work will be digital rather than physical. The minimum required knowledge in this section is higher than in two previous sections due to it being more specialized. Some approaches, such as working with cellular or mobile equipment, may be inaccessable to the average person either for monetary, infrastructure, or legal reasons. The required knowledge for RF is also not trivial. However, the first three sub-topics listed (Wifi, Bluetooth, and RFID/NFC) have a reasonable entry point for most people. Sub-GHz/ISM is also accessabile as long as regulations for frequency, power, etc.
+This field requires specialized equipment and knowledge of radio frequency principles and wireless communication standards. It is the second hardest topic of the four topics listed here. Depending on the use-case, some of the common tools from the [General Tools](#general-tools-table) table may be needed, but typically this bulk of this work will be digital rather than physical. The minimum required knowledge in this section is higher than in two previous sections due to it being more specialized. Some approaches, such as working with cellular or mobile equipment, may be inaccessible to the average person either for monetary, infrastructure, or legal reasons. The required knowledge for RF is also not trivial. However, the first three sub-topics listed (WiFi, Bluetooth, and RFID/NFC) have a reasonable entry point for most people. Sub-GHz/ISM is also accessible as long as regulations for frequency, power, etc.
 
 This section of topics requires some knowledge and skills in:
 *  
@@ -739,7 +738,7 @@ Sub-GHz and ISM band analysis examines unlicensed radio communications used in .
 Cellular analysis examines mobile network communications including GSM, UMTS, LTE, and 5G protocols for security vulnerabilities and privacy implications. 
 
 
-* authentication, netowrk
+* authentication, network
 * protocols
 * IMSI, location track, attacks against mobile devices.
 * infrastructure
@@ -948,28 +947,28 @@ Not all listed tools are necessary for all approaches. Tools listed in this sect
 ---
 ### Disassemblers, Decompilers, Debuggers
 
-Three tools are used for code analysis at various levels. Dissasemblers, Decompilers, and Debugers are all tools that can provide important information for how a computer program works. However, that all have different usages and benefits. 
+Three tools are used for code analysis at various levels. Disassemblers, Decompilers, and Debuggers are all tools that can provide important information for how a computer program works. However, that all have different usages and benefits. 
 
 
 
-`Dissasemblers` are programs that convert binary (machine code) into assembly. This is good for analyzing CPU instructions exactly as they are written (and not as they were intended to work). Disassemblers are a good option for embeded systems and firmware, and when you need a precise understanding of exactly what happens in instructions (without interpretation).
+`Disassemblers` are programs that convert binary (machine code) into assembly. This is good for analyzing CPU instructions exactly as they are written (and not as they were intended to work). Disassemblers are a good option for embedded systems and firmware, and when you need a precise understanding of exactly what happens in instructions (without interpretation).
 
-`Decompilers` are programs that convert binary into a high-level code that may or may not resemble the original source code. Decompilers will convert binary files into human readable formats, though it does not guarantee that all code will be fully decompiled (large programs usually are not), and the original variable names and developer comments will be lost. Function naming and library imports are generally fine, or at least readible. This approach is useful for getting a quick understanding of program logic, for code review, vulnerability hunting, and when assembly would be too difficult to work wih as a starting point. 
+`Decompilers` are programs that convert binary into a high-level code that may or may not resemble the original source code. Decompilers will convert binary files into human readable formats, though it does not guarantee that all code will be fully decompiled (large programs usually are not), and the original variable names and developer comments will be lost. Function naming and library imports are generally fine, or at least readable. This approach is useful for getting a quick understanding of program logic, for code review, vulnerability hunting, and when assembly would be too difficult to work with as a starting point. 
 
-`Debuggers` are integrated into IDEs or other programs. A debugger shows the live execution of a program, often with breakpoints (places where the program can be forced to pause). Using a debugger, you can view the curent instruction being executed, register values (and list of used registers), memory contents (and their addresses), stack traces and history, and program varriables as they are created/assigned/destroyed in realtime. 
+`Debuggers` are integrated into IDEs or other programs. A debugger shows the live execution of a program, often with breakpoints (places where the program can be forced to pause). Using a debugger, you can view the current instruction being executed, register values (and list of used registers), memory contents (and their addresses), stack traces and history, and program variables as they are created/assigned/destroyed in real-time. 
 
 
 Some tips on how to choose:
 * Decompilers can be used to get a quick, human-readable version of the code. It likely wont run without major work, but from here you can rebuild the control flow of the program and important functions.
-* Dissasemblers can be used to examine specific functions. Being a direct to assembly, this will have a high accuracy translation, even if it's less intuitive.  
-* Debuggers can be used to verify a program behavior at runtime. This is useful when you understand general program functions and are looking for a specific behavior, variable, or value. This is 100% accurate because it is real program behavior
+* Disassemblers can be used to examine specific functions. Being a direct translation to assembly, this will have a high accuracy conversion, even if it's less intuitive.  
+* Debuggers can be used to verify program behavior at runtime. This is useful when you understand general program functions and are looking for a specific behavior, variable, or value. This is 100% accurate because it is real program behavior
 
 
 
 * Need to add to the list and check for supported architectures, languages, etc.
 
 
-Dissassmblers:
+Disassemblers:
 
 
 Decompilers:
@@ -980,19 +979,19 @@ Debuggers:
 
 Multiple:
 Ghidra - Disassembler and decompiler
-IDA Pro - Dissasembler, decompiler, and debugger with plugins
+IDA Pro - Disassembler, decompiler, and debugger with plugins
 Binary Ninja - Disassembler and decompiler (with some caveats)
 
 
 # Firmware Tools
 
-* some information about physical extaction and methodology
+* some information about physical extraction and methodology
 
 
 * openOCD, J-Link & J-Trace, bus pirate
 * misc logic analyzers
 
-* SPI progammers, UARt adapters
+* SPI programmers, UART adapters
 
 
 * firmadyne, Firmware analysis toolkit, firmware security assessment tool
@@ -1027,7 +1026,7 @@ In this section are a collection of books and websites for further reading. No s
 1. electronics Tutorials, “Basic Electronics Tutorials,” Basic Electronics Tutorials, 2019. https://www.electronics-tutorials.ws/
   * librry of tutorials for everything related to DC circuits, and some AC
 2. “A BETTER way to learn electronics,” CircuitBread. https://www.circuitbread.com/
-  * "Circuits 101". Tutorials on circuits, components, calculations, and measurerments
+  * "Circuits 101". Tutorials on circuits, components, calculations, and measurements
   * [https://www.circuitbread.com/tutorials/series/circuits-101](https://www.circuitbread.com/tutorials/series/circuits-101)
 
 
