@@ -71,7 +71,7 @@ The `Tool-Problem-Device Method` used here is a general technique for answering 
 * What am I trying to accomplish?
 * What are the benefits of this approach?
 
-With this method, you have three components to consider before answering the above questions: a tool, a problem, and a device. You choose one of those components, and that decision influences the other two. For instance, if you want to learn how to use a `JTAG enumerator` or `serial to RS232` reader, then you need to find a device with those interfaces. Knowing the tool and the device, your starting problem is then something similar to "how do I get data" or "how do I make the serial connection". If, instead, you start with a device such as a `Bluetooth wearable heartrate sensor`, then your problem may be "how do I get Bluetooth data" and your tool will need to be selected to collect and/or decode that data.
+With this method, you have three components to consider before answering the above questions: a tool, a problem, and a device. You choose one of those components, and that decision influences the other two. For instance, if you want to learn how to use a `JTAG enumerator` or `serial to RS232` adaptor, then you need to find a device with those interfaces. Knowing the tool and the device, your starting problem is then something similar to "how do I get data" or "how do I make the serial connection". If, instead, you start with a device such as a `Bluetooth wearable heartrate sensor`, then your problem may be "how do I get Bluetooth data" and your tool will need to be selected to collect and/or decode that data.
 
 This is, of course, a simplification of the possible scope. In this method, a `device` could be represented by a piece of target software, a circuit component, or other device under test (DUT) being investigated. It is a system, network, program, or physical device that some action is being taken against. Knowing the three components of the Tool-Problem-Device Method makes it possible to then begin identifying the scope, limitations, and constraints of the reverse engineering task.
 
@@ -94,13 +94,13 @@ This is, of course, a simplification of the possible scope. In this method, a `d
   * Reasons for a DIY tool or larger purchase, vs. using something standard
   * Who is benefiting from this knowledge or these actions (identifying stakeholders)
 
-These questions are important to begin establishing a scope, objectives, and stakeholders. For a personal project, you can be a stakeholder and the benefit of the project can be purely educational. In the real world, you may be given the device or problem (and thus the constraints) in a work environment. Your job will then be how to select the tool or tools in order to address the problem and stay within the imposed limits and constraints. The `Tool-Problem-Device` method still holds up.
+These questions are important to begin establishing a scope, constraints and limitations, objectives, and stakeholders. For a personal project, you can be a stakeholder and the benefit of the project can be purely educational. In the real world, you may be given the device or problem (and thus the constraints) in a work environment. Your job will then be how to select the tool or tools in order to address the problem and stay within the imposed limits and constraints. The `Tool-Problem-Device` method still holds up.
 
 The following sections contain some notes for choosing tools, identifying and articulating problems, and choosing devices. The [Flow Chart](#the-flow-chart) and [Table](#the-table) sections do into more detail about specific tools and approaches. 
 
 ## The Flow Chart
 
-`The Flow Chart` (All Caps) is the affectionate nickname given to the constantly referenced chart of how select topics in reverse engineering are related or use similar tools. This version is simplified a little so it can be formatted on this README, but the information is still there (just maybe linked to a table in the next section). 
+`The Flow Chart` (All Caps) is the affectionate nickname given to the constantly referenced chart of how select topics in reverse engineering are related or use similar tools. This version is simplified a little so it can be formatted on this README, but the information is still there (just maybe linked to a table in the next section for completeness). 
 
 The Flow Chart starts off with 4 core topics:
 * Wireless Analysis
@@ -110,7 +110,11 @@ The Flow Chart starts off with 4 core topics:
 
 Within each of those topics are a series of sub-topics, and then eventually some tools and examples. Sub-topics are not meant to be insular, and they often rely on information gathered by methods under the parent topic. 
 
-Clicking on a sub-topic block will redirect either to a subsection with more information on the topic, or the respective table if clicking a block listing tools. These are not exhaustive lists and are meant as a starting point. There are undoubtedly other good tools that exist for specific purposes that may not have been included in this list. 
+As you become more adept at reverse engineering, you WILL need skills built across all four topics. Reverse engineering is not an insular field and often relies heavily on domain knowledge, hands-on skills, and the ability to do research quickly in order apraise the validity of an approach. These are all things that are built up over time.
+
+
+
+In the chart below, clicking on a sub-topic block will redirect either to a subsection with more information on the topic, or the respective table if clicking a block listing tools. These are not exhaustive lists and are meant as a starting point. There are undoubtedly other good tools that exist for specific purposes that may not have been included in this list. 
 
 
 
@@ -450,12 +454,30 @@ Common tools for this topic are listed under [General Tools](#general-tools-tabl
 Side-channel Analysis, and Fault Injection are the more difficult topics listed here. 
 
 This section of topics requires some knowledge and skills in:
-*  
+* Static analysis
+* Dynamic analysis
+* Binary file formats
+* Ientifying (processor) architecture
+* Understanding memory layouts
+* Understanding hardware interfacing and what kind of data may be collected or transmitted
+  * This is important for anything that sends or recieves data.
+* Understanding what the boot process is
+* Hardware abstraction layers
+* Memory management, manipulating files
+* Awareness of some basic code obfuscation techniques
+  * Or at least understanding how this is generally implemented and that you will not always be able to recreate everything unless oyu have the original source code
 
-  require additional knowledge of:
-*  
+The listed topics will also require specific knowledge of how to use application (topic) specific decompilers, dissasemblers, debuggers, etc. with the appropriate architecture.  In many cases, you will need to aquire the code in order to analyze it (legally!!!), and it may take multiple steps (and multiple attempts) in order to get something readable.
 
-Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABLE]() tables.
+> [!TIP]
+> Related to the undergraduate course this material is meant to support: if you pirate any software for the class, you fail the assignment. If you pirate any software and put it on the lab server(s), you fail the class. This also applies to mishandling malware and experimenting on your classmates.
+
+
+Some tools and software for these, are listed in the [Disassemblers, Decompilers, Debuggers](#disassemblers-decompilers-debuggers) and [ADD TABLE]() tables.
+
+
+
+
 
 
 ---
@@ -953,6 +975,8 @@ Ghidra - Disassembler and decompiler
 IDA Pro - Dissasembler, decompiler, and debugger with plugins
 Binary Ninja - Disassembler and decompiler (with some caveats)
 
+
+### Wireless Tools
 
 
 
