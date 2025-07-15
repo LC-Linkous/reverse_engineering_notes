@@ -505,16 +505,8 @@ Static and dynamic analysis can be preformed on software. Static analysis tools 
   * A debugger can be used while code is running. This may not be possible in all cases, but running a debugger on a program can provide insight on memory, runtime behavivior, and shoe where key system interaction or data input/output happens. 
 
 
-
-**Tool Examples**
-* Dissassembler
- * 
-* Debuggers
- * 
-* Hex Editor
- * 
-* Other analysis tools for specific purposes:
- * 
+See the following tables for specific tool examples:
+* [Disassemblers, Decompilers, Debuggers](#disassemblers-decompilers-debuggers)
 
 
 
@@ -526,6 +518,29 @@ Firmware is low-level software embedded in hardware, providing basic instruction
 Unlike analyzing software related to applications, firmware analysis examines the low-level software that provides control and functionality for hardware devices. This includes BIOS/UEFI, router firmware, IoT device firmware, embedded system software, bootloaders, etc.. Often times, the device firmware is not ptovided and must be extracted. Firmware extraction often requires specialized techniques like chip-off analysis, JTAG access, or exploitation of firmware update mechanisms. 
  
 Static analysis of firmware can reveal boot processes, hardware initialization sequences, and embedded cryptographic keys or certificates. Dynamic analysis may involve emulation environments or hardware-in-the-loop testing to observe runtime behavior.
+
+
+Aquiring firmware is typically the first step in this process. Unless you have been given, or are able to download the firmware, you will need to physically access a device and then extract the firmware.
+
+Physical firmware extraction can happen in several different ways, and these are all dependent on the connections avilable on the physical device. Some of these are:
+* ISP (In-System Programming) - 
+  * Check the PCB for any ports that might be used by the manufactuer. Check to see if there is a manual for the device for repair. You may be able to use a debug or repair mode to access firmware.
+* JTAG - 
+  * You may be able to connect to JTAG pins on the PCB to read firmware directly from flash memory
+* UART - 
+  * If serial is avilable, either with an existing port or as pins on the board, you may be able to access the bootloader or debug console to dump the firmware. 
+* SPI (Serial Peripheral Interface)-
+  * If pins or pads on the PCB are avilable, you may be able to acess the firmware by using an SPI progammers to read firmware from external flash chips.
+* I2C/SPI Sniffing - 
+  * It may be possible to capture firmware during the boot process or during update. Interupting the boot process or an update process may brick your device, so use this method with caution. 
+
+It is important to remember that not all methods will work with all devices. Even if a physical access method (for instance, JTAG) exists, it may not be connected to memory storage. It could be connected to a sensor. Or power control. Or actuator. Or any number of other chips. 
+
+
+See the following tables for specific tool examples:
+* [Firmware Tools](#firmware-tools) 
+
+
 
 
 
@@ -974,6 +989,16 @@ Multiple:
 Ghidra - Disassembler and decompiler
 IDA Pro - Dissasembler, decompiler, and debugger with plugins
 Binary Ninja - Disassembler and decompiler (with some caveats)
+
+
+# Firmware Tools
+
+
+
+
+
+
+
 
 
 ### Wireless Tools
