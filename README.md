@@ -1036,6 +1036,36 @@ Binary Ninja - Disassembler and decompiler (with some caveats)
 
 ## Documentation Methods
 
+Documentation is arguably the most important part of the reverse engineering process. 
+* It provides evidence of what condition the device or system was in when you received it
+* It provides evidence of your process, and what you did while the device or system was in your custody
+* It can be used to back up claims (or emphasize) the impact or importance of what is being found
+* GOOD documentation makes your process reproducible by yourself and others, including those who may need to fix/patch something you have found
+
+
+Documentation of the reverse engineering process at every step also makes it possible to cross reference your own work (or collaborative work) across topics. This makes it easier to look up parts numbers from chips without having to re-open an enclosure, or stop the current testing. 
+
+Some basic tools for documentation are:
+* Phone cameras, screenshots
+* Paper notebooks, folders for scratch paper, text documents, PowerPoint, etc.
+* Masking tape and a permanent marker (mark and tag parts and connectors), for hardware
+
+The barrier for entry to the documentation part this process is extremely low. When projects get large enough, it is recommended to move to digital notetaking to make searching your documents, leaving notes, and adding pictures. 
+
+Digital and online options for taking notes include (but are not limited to):
+* 1
+* 2
+* 3
+
+
+## Vulnerabilities
+
+This repository does not go deep into vulnerabilities, vulnerability hunting, or the exact methodology needed as it is outside the scope of general reverse engineering. Vulnerabilities may be encountered (and identified) during the reverse engineering process, but they are not the primary feature of the material presented here. 
+
+What do you do if you find a vulnerability? This depends on what you found, how you found it, and if you are doing this as a hobby or professionally. Vulnerabilities should be responsibly disclosed, but there is a process. If you are doing this as part of a hobby, reaching out to the company is likely the place to start. There are more resources online for what to do afterwards than are provided here. If you are doing this for work (professionally, especially with or through a company), there is a process for responsible disclosure and someone you can contact to ask about it if you’re not already aware of it. Laws vary based on locality and are very, very outside the scope of this material.
+
+
+
 ## Bookshelf
 
 In this section are a collection of books and websites for further reading. No single reference is a catch-all for any topic, but some of these may prove useful.
