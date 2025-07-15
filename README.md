@@ -542,18 +542,11 @@ See the following tables for specific tool examples:
 
 
 
-
-
 **Task Examples**
-*  
-  *  
+* Search for firmware online via the manufactuerer 
+* Locate and identify physical interface ports/pins and attempt to physically extract
 
-
-**Tool Examples**
-
-
-
-
+ 
 
 ---
 #### Embedded
@@ -993,11 +986,22 @@ Binary Ninja - Disassembler and decompiler (with some caveats)
 
 # Firmware Tools
 
+* some information about physical extaction and methodology
 
 
+* openOCD, J-Link & J-Trace, bus pirate
+* misc logic analyzers
+
+* SPI progammers, UARt adapters
 
 
+* firmadyne, Firmware analysis toolkit, firmware security assessment tool
+* qiling
 
+* emulation, boot, isolation, etc.
+
+* architecture specific tools
+* extraction vs. analysis tools explicitly listed
 
 
 
