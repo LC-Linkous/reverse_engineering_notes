@@ -575,9 +575,10 @@ These two devices may even be used together in a coordinated system, or on the s
 
 
 See the following tables for specific tool examples:
-* Hardware table
-* Firmware table
-* Software table
+* [General Hardware Tools](#general-tools)
+* [Firmware Tools](#firmware-tools)
+* [Disassemblers, Decompilers, Debuggers](#disassemblers-decompilers-debuggers)
+* Other software tools
 
 
 
@@ -611,10 +612,11 @@ Reverse engineering or security research done on a mobile device may be containe
 
 
 See the following tables for specific tool examples:
-* Hardware table
-* Firmware table
-* Software table
-* Cellular table
+* [General Hardware Tools](#general-tools)
+* [Firmware Tools](#firmware-tools)
+* [Disassemblers, Decompilers, Debuggers](#disassemblers-decompilers-debuggers)
+* Other software tools
+* [Cellular Tools](#cellular-tools)
 
 
 
@@ -1006,8 +1008,8 @@ Ghidra - Disassembler and decompiler
 IDA Pro - Disassembler, decompiler, and debugger with plugins
 Binary Ninja - Disassembler and decompiler (with some caveats)
 
-
-# Firmware Tools
+---
+### Firmware Tools
 
 * some information about physical extraction and methodology
 
@@ -1028,9 +1030,13 @@ Binary Ninja - Disassembler and decompiler (with some caveats)
 
 
 
+
+---
 ### Wireless Tools
 
 
+---
+### Cellular Tools
 
 
 
