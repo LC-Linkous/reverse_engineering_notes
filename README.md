@@ -478,8 +478,6 @@ Some tools and software for these, are listed in the [Disassemblers, Decompilers
 
 
 
-
-
 ---
 #### Software
 
@@ -624,29 +622,20 @@ See the following tables for specific tool examples:
 ---
 #### Web Applications
 
-Web application analysis examines client-side and server-side code to identify security vulnerabilities and understand application logic. [more specific definitions here]
+Web application analysis examines client-side and/or server-side code to identify security vulnerabilities and understand application logic. This topic is less stand-alone for reverse engineering than it may be in conjunction with hardware analysis, working with software, pr explicitly being asked to conduct an investigation when given source files. If conducting an vulnerability analysis, it is likely that no code will be provided 
 
-
-Client-side analysis involves reviewing JavaScript, HTML, and CSS to identify potential cross-site scripting (XSS) vulnerabilities and logic flaws. [talk about cross site scripting since that comes up a lot in docs and write ups]
-
-Server-side analysis may involve source code review, binary analysis, or black-box testing of web services and APIs. 
-
-
-* more details + a few tool links
-* this section also needs a few examples to split up this section and the genreal software section. 
-* common vulnerabilities are  SQL injection, authentication bypass, and logic flaws/business logic flaws
+Client-side analysis involves reviewing JavaScript, HTML, and CSS to identify potential cross-site scripting (XSS) vulnerabilities and logic flaws. Cross-site scripting (XSS) is a specific type of security vulnerability found in web applications where malicious scripts are injected in trusted websites/sources. These scripts can then be executed when users visit the infected website. Server-side analysis may involve source code review, binary analysis, or black-box testing of web services and APIs. 
 
 
 
 **Task Examples**
-*  
-  *  
+* Identifying application components, endpoints, and functionality
+* Inspecting the front-end code in the browser
+* Inspect frameworks, libraries, API and user interfacing
 
 
 See the following tables for specific tool examples:
-* 
-* 
-
+* [Web Application Tools](#web-application-tools)
 
 
 
@@ -1038,6 +1027,22 @@ Binary Ninja - Disassembler and decompiler (with some caveats)
 ---
 ### Cellular Tools
 
+
+
+---
+### Web Application Tools
+
+* Highlevel only. no SQL injection examples. 
+
+
+Browser development tools: Chrome DevTools, Firefox Developer Tools
+
+Lighthouse JSHint/JSLint
+Retire.js
+Burp Suite
+
+
+### Malare Detection Tools
 
 
 ## Documentation Methods
