@@ -642,26 +642,15 @@ See the following tables for specific tool examples:
 ---
 #### Malware Analysis
 
-Malware analysis is distinct from the other code analysis sections in that malware does not natively belong on any system and was written with the purpose to exploit vulnerabilities or human error. 
-Malware analysis involves examining malicious software to understand its behavior, capabilities, and potential impact on target systems or devices. A distinction has not been drawn here between malware used on systems like user computers and infected devices forming bot nets. (work the definitions in a little here)
+Malware analysis is distinct from the other code analysis sections in that malware does not natively belong on any system and was written with the purpose to exploit vulnerabilities or human error.  Malware analysis is mentioned here as it is an important part of the presented taxonomy. However, is not a part of the undergraduate course this repository supports. 
+
+Malware analysis involves examining malicious software to understand its behavior, capabilities, and potential impact on target systems or devices. A distinction has not been drawn here between malware used on systems like user computers and infected devices forming bot nets. Malware can be spread through infected websites, downloads, email attatchements, physical media (i.e., flashdrives, harddrives, phones, anything that can be plugged into a computer including disguised items), etc. 
 
 
-Static analysis examines malware samples without execution to identify embedded strings, cryptographic algorithms, and potential indicators of compromise. Dynamic analysis executes malware in controlled sandbox environments to observe runtime behavior, network communications, and system modifications. 
+Static analysis examines malware samples without execution to identify embedded strings, cryptographic algorithms, and potential indicators of compromise on the infected system (e.g., files that can reinfect a machine, logged data, other scripts, unsual web traffic etc.). Dynamic analysis executes malware in controlled sandbox environments to observe runtime behavior, network communications and changes, file modification, and system modification (such as adding a device to a network). 
 
 
-Advanced malware may employ anti-analysis techniques like packing, obfuscation, or virtual machine detection that require specialized analysis approaches. (talk about some general safety when looking at devices with malware)
-
-
-ADD NOTE HERE about how this is NOT done in the undergrad course, even if it is a topic that needs to be acknowledged in this taxonomy
-
-
-**Task Examples**
-*  
-  *  
-
-
-**Tool Examples**
-
+Advanced malware may employ anti-analysis techniques like packing, obfuscation, or virtual machine detection that require specialized analysis approaches and tools. 
 
 
 
