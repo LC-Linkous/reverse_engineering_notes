@@ -622,9 +622,11 @@ See the following tables for specific tool examples:
 ---
 #### Web Applications
 
-Web application analysis examines client-side and/or server-side code to identify security vulnerabilities and understand application logic. This topic is less stand-alone for reverse engineering than it may be in conjunction with hardware analysis, working with software, pr explicitly being asked to conduct an investigation when given source files. If conducting an vulnerability analysis, it is likely that no code will be provided 
+Web application analysis examines client-side and/or server-side code to identify security vulnerabilities and understand application logic. This topic is less stand-alone for reverse engineering than it may be in conjunction with hardware analysis, working with software, porr explicitly being asked to conduct an investigation when given source files. If conducting an vulnerability analysis, it is likely that no code will be provided. 
 
-Client-side analysis involves reviewing JavaScript, HTML, and CSS to identify potential cross-site scripting (XSS) vulnerabilities and logic flaws. Cross-site scripting (XSS) is a specific type of security vulnerability found in web applications where malicious scripts are injected in trusted websites/sources. These scripts can then be executed when users visit the infected website. Server-side analysis may involve source code review, binary analysis, or black-box testing of web services and APIs. 
+Client-side analysis involves reviewing JavaScript, HTML, and CSS to identify potential cross-site scripting (XSS) vulnerabilities and logic flaws. Cross-site scripting (XSS) is a specific type of security vulnerability found in web applications where malicious scripts are injected in trusted websites/sources. These scripts can then be executed when users visit the infected website. 
+
+Server-side analysis may involve source code review, binary analysis, or black-box testing of web services and APIs. 
 
 
 
@@ -666,13 +668,42 @@ This topic has been split into the following sub-topics:
 * [IoT Protocols](#iot-protocols)
 
 
-This field requires specialized equipment and knowledge of radio frequency principles and wireless communication standards. It is the second hardest topic of the four topics listed here. Depending on the use-case, some of the common tools from the [General Tools](#general-tools-table) table may be needed, but typically this bulk of this work will be digital rather than physical. The minimum required knowledge in this section is higher than in two previous sections due to it being more specialized. Some approaches, such as working with cellular or mobile equipment, may be inaccessible to the average person either for monetary, infrastructure, or legal reasons. The required knowledge for RF is also not trivial. However, the first three sub-topics listed (WiFi, Bluetooth, and RFID/NFC) have a reasonable entry point for most people. Sub-GHz/ISM is also accessible as long as regulations for frequency, power, etc.
+This field requires specialized equipment and knowledge of radio frequency principles and wireless communication standards. It is the second hardest topic of the four topics listed here to get started with. Depending on the use-case, some of the common tools from the [General Tools](#general-tools-table) table may be needed, but typically this bulk of this work will be digital rather than physical. The minimum required knowledge in this section is higher than in two previous sections due to it being more specialized. Some approaches, such as working with cellular or mobile equipment, may be inaccessible to the average person either for monetary, infrastructure, or legal reasons. The required knowledge for RF is also not trivial. However, the first three sub-topics listed (WiFi, Bluetooth, and RFID/NFC) have a reasonable entry point for most people. Sub-GHz/ISM is also accessible as long as regulations for frequency, power, etc.
 
 This section of topics requires some knowledge and skills in:
-*  
+*  Basic RF concepts including frequency, modulation, demodulation, bandwidth, and signal propagation.
+* Basic antenna theory and selection for different frequency ranges
+  * Directionality, gain, polarization, etc...
+* Software Defined Radio (SDR) operation and common hardware platforms 
+  * The RTL-SDR and HackRF One devices are popular and widely documented online
+* Network packet capture and analysis using tools like Wireshark
+  * Wireshark is the default tool that goes along with the course materials.
+* GNU Radio framework for custom signal processing and protocol development
+* Protocol analysis tools and techniques for wireless communications
+* Signal identification and spectrum analysis techniques
+* Command-line interfaces and scripting for wireless testing and monitoring
+* Regulatory compliance and legal considerations for RF testing
+  * Just because technology can transmit, does not mean you are legally allowed to do so.
 
-  require additional knowledge of:
-*  
+Special cases (and working with hardware) may require additional knowledge of:
+* Firmware extraction and analysis from wireless devices
+* Hardware debugging interfaces (JTAG/SWD) for wireless chipset analysis
+* (Python) Programming for signal processing and automation tasks
+  * Bash and shell scripting are good alternatives, but many of the examples in the private half of this material default to Python
+* Cryptanalysis techniques for assessing wireless security
+  * This includes the strength of security and HOW it was implemented
+
+
+Cellular/Mobile analysis requires additional knowledge of:
+* Cellular network architecture (GSM/UMTS/LTE/5G) and protocol stacks
+* IMSI catchers and base station simulation techniques
+* SIM card analysis and over-the-air provisioning protocols
+* Specialized cellular test equipment 
+ * This includes expensive cell site simulators, protocol analyzers, proper isolation
+* Regulatory restrictions and licensing requirements for cellular frequency bands
+
+
+
 
 Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABLE]() tables.
 
@@ -681,10 +712,26 @@ Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABL
 ---
 #### WiFi
 
-WiFi is based on the IEEE 802.11 wireless networking standards, which define wireless communication standards. WiFi analysis looks at how devices communicate, what devices communicate, the encryption protocols, and how networks are managed.
+WiFi is a wireless networking technology that is part of a family of IEEE 802.11 standards that define the protocols for wireless communication between access points and client devices. WiFi can be used in local area networks (LAN), or to a router with an ISP out to the internet. It operates via radio frequency in the 2.4 GHz, 5 GHz, and 6 GHz bands.
+
+Standards for WiFi have evolved from 802.11a/b/g through modern 802.11ac (WiFi 5) and 802.11ax (WiFi 6/6E) implementations, each offering improved speed, range, and security features. (Hence why WiFi operates at multiple different frequencies)
+
+Wireless analysis of WiFi involves monitoring, capturing, and examining 802.11 traffic to understand network behavior, identify security vulnerabilities, and reverse engineer proprietary extensions or implementations. This analysis can reveal network topologies, device capabilities, security configurations, and potential attack vectors within wireless networks. The analysis process often involves capturing packets in monitor mode, examining 802.11 frame structures, analyzing management and control frames, and identifying encryption implementations or weaknesses.
+
+This type of analysis is one of the most acessable for someone experimenting with WiFi network analysis tools. HOWEVER, analysis should only be done on networks (AND DEVICES) where you have express permission to experiment. If you are a student experimenting on a public or university network; don't.
+
+WiFi analysis is typically performed using software-defined radios, dedicated WiFi adapters capable of monitor mode (which not all of the cheap adapters have built in), or specialized wireless testing equipment. Common tools include :
+* Wireshark for protocol analysis,
+* Kismet for network discovery and monitoring,
+* Aircrack-ng suite for security testing,
+* and various SDR platforms like HackRF or USRP for deeper signal analysis.
 
 
-* bulk out the info, add tools plus some examples
+
+**Task Examples**
+* Capturing and analyzing WiFi handshake packets to assess WPA/WPA2/WPA3 security implementations
+* Using Wireshark to capture and examine basic WiFi beacon frames to identify network names, security types, and supported features
+* Performing simple spectrum analysis to identify WiFi channels in use and measure signal strength across different locations 
 
 
 
@@ -1124,11 +1171,14 @@ This section provides s beginner-friendly launch point to more specific terminol
 * ESD
 * Firmware
 * Hardware
+* ISP
 * OS
 * PCB
 * RF
+* RX
 * SDR
 * Software
+* TX
 * WiFi
 
 
