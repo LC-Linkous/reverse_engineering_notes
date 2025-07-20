@@ -712,7 +712,7 @@ Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABL
 ---
 #### WiFi
 
-WiFi is a wireless networking technology that is part of a family of IEEE 802.11 standards that define the protocols for wireless communication between access points and client devices. WiFi can be used in local area networks (LAN), or to a router with an ISP out to the internet. It operates via radio frequency in the 2.4 GHz, 5 GHz, and 6 GHz bands.
+WiFi is a wireless networking technology that is part of a family of IEEE 802.11 standards that define the protocols for wireless communication between access points and client devices. WiFi can be used in wireless local area networks (WLAN), or to a router with an ISP out to the internet. It operates via radio frequency in the 2.4 GHz, 5 GHz, and 6 GHz bands.
 
 Standards for WiFi have evolved from 802.11a/b/g through modern 802.11ac (WiFi 5) and 802.11ax (WiFi 6/6E) implementations, each offering improved speed, range, and security features. (Hence why WiFi operates at multiple different frequencies)
 
@@ -739,16 +739,19 @@ WiFi analysis is typically performed using software-defined radios, dedicated Wi
 ---
 #### Bluetooth
 
+Bluetooth is a short-range wireless communication technology operating in the 2.4 GHz ISM band, designed for connecting devices within a personal area network (PAN). This includes both Classic Bluetooth for higher bandwidth applications and Bluetooth Low Energy (BLE) for power-constrained devices and IoT applications. Modern implementations follow various Bluetooth Core Specification versions, where BLE (Bluetooth 4.0+, specifically) is becoming increasingly prevalent in consumer electronics, medical devices, and smart home (and IoT) products.
 
-Bluetooth analysis examines short-range wireless communications including Classic Bluetooth and Bluetooth Low Energy (BLE) protocols.
+Bluetooth analysis examines these short-range wireless communications to understand device behavior, extract information, and identify security vulnerabilities. This section terats Classic Bluetooth and BLE protocols as similarly acessable in terms of analysis, though that might not always be the case when purchasing devices for testing. BLE analysis often involves examining advertising packets, GATT (Generic Attribute Profile) services, and characteristic operations for sensitive data exposure, while Classic Bluetooth analysis focuses on protocol stack vulnerabilities and pairing mechanisms. 
 
-BLE analysis often involves examining advertising packets, GATT services, and characteristic operations for sensitive data exposure. 
+Protocol analysis is typically performed using specialized Bluetooth sniffers like Ubertooth One, commercial analyzers, or software tools that work with supported dongles. Security analysis involves examining pairing processes, encryption implementations, and authentication mechanisms to identify weaknesses in device communications. Tools such as Wireshark with Bluetooth support, Bluetoothctl (for device interaction), and custom scripts using BlueZ or similar stacks support comprehensive analysis of Bluetooth traffic and device behavior.
 
-Protocol analysis.... 
 
-Security analysis .... 
-
-* bulk out the info, add tools plus some examples
+**Task Examples**
+* Using smartphone apps or simple tools to discover nearby Bluetooth devices and their basic information
+* Scanning for BLE devices and analyzing advertising packets to identify device types and broadcast data
+* Monitoring BLE advertising packets with basic tools to see what data devices broadcast publicly
+* Analyzing Classic Bluetooth pairing procedures and identifying weak authentication implementations
+* Performing BLE packet injection attacks to test device security and input validation mechanisms
 
 
 ---
@@ -1164,22 +1167,28 @@ This section provides s beginner-friendly launch point to more specific terminol
 
 * WORD OR ABBREVIATION - full spelling if abbreviation. definition or usage. 
 
+* BLE
 * Debugger
 * Decompiler
 * DUT
 * Embedded
 * ESD
 * Firmware
+* GATT
 * Hardware
 * ISP
+* LAN
 * OS
+* PAN -   (see also: LAN, WAN, WLAN)
 * PCB
 * RF
 * RX
 * SDR
 * Software
 * TX
+* WAN
 * WiFi
+* WLAN
 
 
 ## References
