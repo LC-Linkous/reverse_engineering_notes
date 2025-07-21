@@ -757,17 +757,22 @@ Protocol analysis is typically performed using specialized Bluetooth sniffers li
 ---
 #### RFID/NFC
 
-RFID and NFC analysis examines near-field communication systems used for... 
+RFID (Radio Frequency Identification) and NFC (Near Field Communication) analysis examines near-field communication systems used for contactless identification, payment processing, access control, and data transfer applications. These technologies operate at various frequencies including Low Frequency (125-134 kHz), High Frequency (13.56 MHz), and Ultra High Frequency (860-960 MHz) bands. RFID tags can be either passive tags that derive power from reader fields or active tags with their own power sources. Passive RFID tags are the tags that are refered to by default as 'RFID' in this repo, and the type of RFID that that is the most common in included examples. RFID tags are most popularly used in inventory tracking (e.g., libraries, factories, warehouses, medications, etc.)
+
+Protocol analysis can reveal tag formats, authentication mechanisms, and data structures used in different RFID implementations. RFID analysis often focuses on examining tag memory structures, proprietary authentication schemes, identifying weaknesses in access control systems used for physical security, and read/usage limitations. 
+
+NFC analysis involves understanding and applying ISO 14443 and ISO 18092 standards, examining NDEF (NFC Data Exchange Format) records, and analyzing secure element interactions in payment and authentication applications. Most smartphones have NFC capabilities, which are used for digital Google and Apple payments
+
+RFID/NFC analysis can be preformed using specialized readers such as Proxmark3, Chameleon devices, or some types of SDRs, as long as they operate in the right frequency range(s). Analysis of these technologies  typically involves tag enumeration, memory dumping, authentication bypass attempts, and protocol fuzzing to identify implementation vulnerabilities. Other research on this topic is on the usage for asset tracking, inventory enumeration, use in hospitals for tracking used equipment that need to be steralized, and (importantly) access control. 
+
+**Task Examples**
+* Using smartphone NFC capabilities to read and examine NDEF records from NFC tags and cards
+* Identifying RFID tag types and frequencies using basic RFID readers
 
 
-Protocol analysis reveals tag formats, authentication mechanisms, and data structures used in different RFID implementations. 
 
-* add a sentence on RFID specific, NFC specific
-
-
-* bulk out the info, add tools plus some examples
-
-
+> [!WARNING]  
+> RFID/NFC technology provided for assignments should never be used to clone and impersonate someone else. Do NOT copy student IDs, dorm access, access cards, or ANYTHING that has not been designated explicitly for educational purposes. 
 
 
 ---
@@ -1178,10 +1183,12 @@ This section provides s beginner-friendly launch point to more specific terminol
 * Hardware
 * ISP
 * LAN
+* NFC
 * OS
 * PAN -   (see also: LAN, WAN, WLAN)
 * PCB
 * RF
+* RFID
 * RX
 * SDR
 * Software
