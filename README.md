@@ -820,10 +820,11 @@ Analysis of this topic relies heavily on proprietary software and testing enviro
 IoT protocol analysis examines communication standards used in Internet of Things devices, including:
 * application-layer protocols,
 * transport mechanisms, 
-* ONE MORE HERE!!
+* data serialization and encoding formats, 
+* security and authentication mechanisms,
 * and device management frameworks. 
 
-These protocols often prioritize ease of deployment and low resource consumption over security, creating widespread vulnerabilities in connected device ecosystems.
+These protocols often prioritize ease of deployment and low resource consumption over security, creating widespread vulnerabilities in connected device ecosystems. This is similat to the goals of Bluetooth because 1. these devices very often are the same device with multiple options for wireless communication, and 2. these devices need to be lower power and easily deployable in order to make the vast networks that modern users want to deploy. Ad-Hoc networks, or networks on demand, are key to deploying smart home and other IoT networks, and they are often managed by several layers of APIs, apps, services, and communication demands. 
 
 Three popular communication protocols/methods are:
 * **HTTP/HTTPS and WebSocket:** Traditional web protocols adapted for IoT device communication and cloud connectivity
@@ -863,7 +864,7 @@ This topic has been split into the following sub-topics:
 * [Network Forensics](#network-forensics)
 
 
-Depending on the use-case, some of the common tools from the [General Tools](#general-tools-table) table may be needed, but typically this bulk of this work will be digital rather than physical. The minimum required knowledge in this section is higher than in other sections due to it being more specialized. The scope of this topic is also much broader in scope than the previous topics, which adds to the difficulty for approaching this topic as a beginner.
+Depending on the use-case, some of the common tools from the [General Tools](#general-tools-table) table may be needed, but typically this bulk of this work will be digital rather than physical. The minimum required knowledge in this section is higher than in other sections due to it being more specialized. The scope of this topic is also much broader in scope than the previous topics, which adds to the difficulty for approaching this topic as a beginner. This section is light (for now), as it is outside the scope of the resources offered to the undergraduate course this material supports. However, some tools are listed in the table section for completeness. 
 
 A sample of skills for this topic includes:
 * OSI model understanding
@@ -902,56 +903,75 @@ Some tools and software for these, are listed in the [ADD TABLE]() and [ADD TABL
 ---
 #### Protocol Analysis
 
+Protocol analysis involves a deep dive inspection and interpretation of network communication standards with the goal of understanding how devices and applications exchange information.
 
+This type of analysis includes dissecting packet structures and identifying protocol implementations. When looked at from a security perspective, this may include analyzing compliance with established specifications to detect anomalies or non-standard behavior. 
+
+
+**Task Examples**
+* Analyzing packet captures and identifying message formats
+* Analyzing protocol state machines and handshake sequences to identify implementation flaws/security vulnerabilities
 
 
 ---
 #### Packet Capture
 
+Packet capture focuses on collecting and storing network traffic for analysis. This requires a planned (ideally strategic) placement of capture points (hardware and software) and understanding of network topology.
 
+**Task Examples**
+* Setting up distributed capture points using TAPs and span ports to monitor network segments without impacting performance
+* Implementing filtered capture to collect specific traffic types
 
 
 ---
 #### Network Security
+
+Network security analysis examines traffic patterns, protocol implementations, and network configurations to identify threats, vulnerabilities, and security policy violations. This is the primary 'security' focused analysis in the preented taxonomy, and has overlap with reverse engineering even though that it typically not the focus. However, it has been included here for completeness. Security analysis focuses on detecting malicious activity, unauthorized access attempts, and potential attack vectors within network communications, which are all important factors to understanding how a system is used by the full demographic of users (e.g., guest users, normal users, admin users, unintended users and devices floating on the network, and malicious users).
+
+
+
+**Task Examples**
+* Monitoring network traffic and access to track user acess vs. expected location, or multiple log-ins
+* Analyzing encrypted traffic metadata and flow patterns to identify command and control communications or data exfiltration
+* Investigating network-based attacks such as man-in-the-middle, DNS poisoning, or lateral movement techniques
 
 
 
 ---
 #### Industrial/IoT Protocols
 
+Industrial and IoT protocol analysis examiens specialized communication standards used in industrial or lage-scale implementation technology environments.. These protocols often prioritize availability and real-time performance over security, creating unique analysis challenges and networking connections.
 
+
+**Task Examples**
+* Testing commands for PLCs connected to the network to see if they 'talk back' and offer hints for connection or even credentials
+* Analyzing Modbus communications in industrial control systems to identify unauthorized commands or configuration changes
+* Investigating IoT device communications using MQTT or CoAP to detect compromised sensors or unauthorized data access
 
 
 ---
 #### Network Infrastructure
 
+Network infrastructure analysis examines the foundational components that route, switch, and manage network traffic, including configuration analysis of routers, switches, firewalls, and network appliances. 
+This topic is the most 'textbook' in terms of definitions and structure. It involves understanding how network topology and device configurations affect traffic flow and security posture.
 
 
+**Task Examples**
+* Analyzing router and switch configurations to identify misconfigurations that could enable network attacks or unauthorized access
+* Investigating network topology changes and routing table modifications that may indicate compromise or misconfiguration
+* Analyzing the tradeoff for Ad-Hoc network creation with IoT devices
 
 
 ---
 #### Network Forensics
 
+Network forensics involves systematic investigation of network-based incidents through traffic analysis, log correlation, and timeline reconstruction. Unlike the Network Security topic, a key component here is preservation of the original system being analyzed so that if anything is discovered it can be replicated or explored without changing the original system. There may be some overlap with law enforcement investigation depending on the situation, so evidence needs to be preserved with a high degree of integrity during the investigation process. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Task Examples**
+* Documentation.
+* Reconstructing attack timelines and impact by correlating network logs, packet captures, and device configurations across multiple network segments
+* Performing network-based attribution analysis in order to identify attack sources and potential impact on compromised systems
 
 
 
