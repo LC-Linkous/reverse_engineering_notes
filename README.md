@@ -778,29 +778,39 @@ RFID/NFC analysis can be preformed using specialized readers such as Proxmark3, 
 ---
 #### Sub-GHz/ISM
 
-Sub-GHz and ISM band analysis examines unlicensed radio communications used in ....
+Sub-GHz and ISM band analysis examines unlicensed radio communications used in Internet of Things (IoT) devices, industrial control systems, and wireless sensor networks. The Industrial, Scientific, and Medical (ISM) bands operate in the frequency range below 1 GHz and are allocated for **unlicensed** use, making them popular for low-power, long-range communication protocols.
+
+Some common protocols include LoRaWAN for wide-area networks and Zigbee for mesh networking in smart homes and industrial applications. There are an uncountable number of proprietary sensor networks used in agriculture, environmental monitoring, medical devices and support,  and asset tracking. 
+
+Sub-GHz analysis typically involves signal capture, protocol identification, and message decoding to understand device behavior and identify potential security weaknesses in authentication, encryption, or network topology. 
+
+Many implementations for technology using Sub-GHz and ISM bands rely on weak or default authentication mechanisms. This makes them attractive  targets for replay attacks, jamming, and unauthorized wireless acess.
 
 
+NOTE: Licensed bands require regulatory approval and fee payment for exclusive use, while unlicensed ISM bands allow free operation with power and emission restrictions. This creates a crowded spectrum environment where multiple devices and protocols must coexist, often leading to interference and security vulnerabilities. This makes tech in these bands a little harder to test with if the background is RF noisy, but this is also why one of the most important isolation tests happens in an anechoic chamber. 
 
-* licensed vs unlicensed
-* LoRaWAN, Zigbee, and proprietary sensor networks
-* authentication
-
-
-
+**Task Examples**
+* Capturing and analyzing wireless transmissions using an SDR
+* Identifying communication protocols and message formats
 
 
 
 ---
 #### Cellular/Mobile
 
-Cellular analysis examines mobile network communications including GSM, UMTS, LTE, and 5G protocols for security vulnerabilities and privacy implications. 
+Cellular analysis examines mobile network communications including GSM, UMTS, LTE, and 5G protocols for security vulnerabilities and privacy implications. Mobile networks form critical infrastructure that handles authentication, data transmission, and location services for billions of devices worldwide. Cellular networks include more than just smartphones; phones, computers, medical devices (including at-home devices, with may run on #G networks), industrial equipement, and much more utilizes cellular communication protocols and towers.
+
+Authentication varies across implementations/generations. A5 encryption is implemented in GSM and is known to be weak, while LTE and 5G (and newer) are known to implement more robust protocols.
+
+Network protocols include signaling protocols like SS7 and Diameter which have known vulnerabilities allowing interception and redirection of communications. Each cellular generation introduces new attack surfaces, but when they maintain backward compatibility with older, less secure standards (additional) vulnerabilities are introduced or may not be able to be fully patched.
+
+Analysis of this topic relies heavily on proprietary software and testing envirornments - it is not for a casual hobbiest or researcher to address. While you can investigate a device that you own, you CANNOT experiment on proprietary (especially ACTIVE and PUBLIC) networks.
 
 
-* authentication, network
-* protocols
-* IMSI, location track, attacks against mobile devices.
-* infrastructure
+
+**Task Examples**
+* Capturing and analyzing cellular signals
+* Analyzing behavior with apps and softare that need live cellular connection
 
 
 
@@ -808,16 +818,35 @@ Cellular analysis examines mobile network communications including GSM, UMTS, LT
 #### IoT Protocols
 
 IoT protocol analysis examines communication standards used in Internet of Things devices, including:
-* i1
-* i2
-* i3
+* application-layer protocols,
+* transport mechanisms, 
+* ONE MORE HERE!!
+* and device management frameworks. 
+
+These protocols often prioritize ease of deployment and low resource consumption over security, creating widespread vulnerabilities in connected device ecosystems.
+
+Three popular communication protocols/methods are:
+* **HTTP/HTTPS and WebSocket:** Traditional web protocols adapted for IoT device communication and cloud connectivity
+* **CoAP (Constrained Application Protocol):** RESTful protocol designed for resource-constrained devices and networks
+* **MQTT (Message Queuing Telemetry Transport):** Lightweight publish-subscribe messaging protocol commonly used for sensor data and device control. (NOTE: This can also be easily setup on a tudent workstation to experiment with packet composition and managing device channels)
+
+IoT devices frequently become targets for botnets due to weak default credentials that users rarely change. This leads to massive networks of compromised devices used for distributed attacks. 
+
+Access control issues arise from poor authentication implementations, unencrypted communications, and overly permissive device permissions that allow unauthorized access to sensitive functions.
+
+Many IoT devices run unsupported firmware on outdated hardware platforms, leaving known vulnerabilities unpatched for years (if ever). Manufacturers often abandon security updates shortly after product release, while devices remain operational in field deployments for decades. 
+
+It is also possible for devices to be issued a recall, but for users to remain unaware due to the device being low cost or only occasionally used. In a smart-home system, for example, this could lead to multiple infected devices. 
 
 
+**Task Examples**
+* Identifying default credentials and weak access controls in device firmware
+* Mapping IoT device attack surfaces and network communication patterns
+* Capturing packets and other misc. informtion about operation with an SDR
 
-* mention botnets, weak default credentials, access control issues
-* unsupported firmware running on old device
 
-
+> [!TIP]
+> IoT devices are the most common devices avilable in the hardware lab open to the university course this material is meant to support. The cheap, wearable medical IoT devices bought from sketchy vendors are key targets for analyzing IoT protocols and encrypted/unencrypted data. Most of them also do Bluetooth.  
 
 
 ### Network Analysis
@@ -1181,8 +1210,12 @@ This section provides s beginner-friendly launch point to more specific terminol
 * Firmware
 * GATT
 * Hardware
+* IoT
+* ISM
 * ISP
 * LAN
+* LoRa
+* LoRaWAN 
 * NFC
 * OS
 * PAN -   (see also: LAN, WAN, WLAN)
