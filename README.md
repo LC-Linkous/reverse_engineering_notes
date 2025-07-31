@@ -156,61 +156,6 @@ graph LR;
     E --> E5[Network Infrastructure]
     E --> E6[Network Forensics]
         
-    B1 --> B1a1["<div style='text-align: left'><b>Task Examples:</b><br>• Documentation<br>• Photography<br>• Identifying markings</div>"]
-    B1 --> B1a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Notebook or digital notes<br>• Phone camera<br>• General tools (see table)</div>"]
-    B2 --> B2a1["<div style='text-align: left'><b>Task Examples:</b><br>• Continuity testing <br>• Power rail identification <br>• Interface port identification </div>"]
-    B2 --> B2a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Multimeter<br>• Magnifier <br>• Phone camera</div>"]
-    B3 --> B3a1["<div style='text-align: left'><b>Task Examples:</b><br>• Part number research <br>• Datasheet collection </div>"]
-    B3 --> B3a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Magnifier<br>• Phone camera<br>• UV Light</div>"]
-    B4 --> B4a1["<div style='text-align: left'><b>Task Examples:</b><br>• Identify trace connections <br>• Finding and identifying manufacturer markings<br>• Identify potential debug ports and test interfacing </div>"]
-    B4 --> B4a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Magnifier<br>• Multimeter <br>• Internet search</div>"]
-    B5 --> B5a1["<div style='text-align: left'><b>Task Examples:</b><br>• Protocol identification <br>• Timing analysis <br>• Analog waveform capture</div>"]
-    B5 --> B5a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Logic Analyzer<br>• Oscilloscope<br>• JTAG enumerator</div>"]
-    B6 --> B6a1["<div style='text-align: left'><b>Task Examples:</b><br>• Power signature analysis <br>• Component/section isolation testing <br>• Monitoring voltage rail </div>"]
-    B6 --> B6a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Power Supply<br>• multimeter<br>• Oscilloscope</div>"]
-    B7 --> B7a1["<div style='text-align: left'><b>Task Examples:</b><br>• Electromagnetic emissions capture <br>• Timing attack assessment <br>• Power analysis attack </div>"]
-    B7 --> B7a2["<div style='text-align: left'><b>Task Examples:</b><br>• SDR<br>• Spectrum Analyzer<br>• Oscilloscope</div>"]
-    B8 --> B8a1["<div style='text-align: left'><b>Task Examples:</b><br>• Voltage glitching <br>• Clock manipulation <br>• Input fuzzing</div>"]
-    B8 --> B8a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Power supply & control<br>• Oscilloscope<br>• fuzzing-specific device</div>"]
-
-    C1 --> C1a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C1 --> C1a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C2 --> C2a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C2 --> C2a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C3 --> C3a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C3 --> C3a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C4 --> C4a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C4 --> C4a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C5 --> C5a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C5 --> C5a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C6 --> C6a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C6 --> C6a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-
-    D1 --> D1a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D1 --> D1a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D2 --> D2a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D2 --> D2a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D3 --> D3a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D3 --> D3a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D4 --> D4a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D4 --> D4a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D5 --> D5a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D5 --> D5a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D6 --> D6a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D6 --> D6a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-
-    E1 --> E1a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E1 --> E1a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E2 --> E2a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E2 --> E2a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E3 --> E3a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E3 --> E3a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E4 --> E4a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E4 --> E4a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E5 --> E5a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E5 --> E5a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E6 --> E6a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E6 --> E6a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
 
       
     style A fill:#87ceeb,color:#000  
@@ -1079,7 +1024,48 @@ Some tips on how to choose:
 Disassemblers:
 
 
+| Tool Name | Paid? | License | Operating System | Short Description |
+|-----------|-------|---------|------------------|-------------------|
+| IDA Pro | Yes | Commercial | Windows, Linux, macOS | Industry-standard disassembler with advanced analysis capabilities and plugin ecosystem |
+| Ghidra | No | Open Source (Apache 2.0) | Windows, Linux, macOS | NSA-developed framework with built-in decompiler and collaborative features |
+| Binary Ninja | Yes (Free version available) | Commercial/Personal | Windows, Linux, macOS | Modern disassembler with clean UI, intermediate language, and Python API |
+| Radare2 | No | Open Source (LGPL) | Windows, Linux, macOS, Mobile | Command-line reverse engineering framework with extensive scripting support |
+| Hopper | Yes | Commercial | macOS, Linux | User-friendly disassembler with decompiler focused on macOS/iOS binaries |
+| JEB | Yes | Commercial | Windows, Linux, macOS | Multi-platform disassembler specializing in Android/Dalvik and native code |
+| Cutter | No | Open Source (GPL) | Windows, Linux, macOS | Qt-based GUI frontend for Radare2 with modern interface |
+| Objdump | No | Open Source (GPL) | Windows, Linux, macOS | GNU binutils disassembler for object files and executables |
+
+
+
+
+
+IDA Pro, Ghidra, Binary Ninja, Radare2, Hopper
+OllyDbg, x64dbg
+Windows Driver Kit (WDK) (WinDbg) 
+JEB (disassembler and decompiler)
+Jad (unmaintained 2011)
+
+
+https://ctf101.org/reverse-engineering/what-are-disassemblers/
+
+https://sourceforge.net/directory/disassemblers/windows/ 
+
+https://en.wikipedia.org/wiki/Category:Disassemblers
+https://en.wikipedia.org/wiki/JEB_decompiler
+
 Decompilers:
+https://en.wikipedia.org/wiki/Category:Decompilers
+
+Java specific: Mocha decompiler, JD Decompiler, JAD decompiler
+https://en.wikipedia.org/wiki/JD_Decompiler
+https://java-decompiler.github.io/
+
+Python: https://pypi.org/project/uncompyle6/
+
+
+https://en.wikipedia.org/wiki/Decompiler
+
+
 
 
 Debuggers:
@@ -1089,6 +1075,8 @@ Multiple:
 Ghidra - Disassembler and decompiler
 IDA Pro - Disassembler, decompiler, and debugger with plugins
 Binary Ninja - Disassembler and decompiler (with some caveats)
+
+
 
 ---
 ### Firmware Tools
@@ -1162,7 +1150,12 @@ Digital and online options for taking notes include (but are not limited to):
 * 3
 
 
-## Vulnerabilities
+## Computer Notes
+
+
+
+
+## Vulnerabilities and Reverse Engineering
 
 This repository does not go deep into vulnerabilities, vulnerability hunting, or the exact methodology needed as it is outside the scope of general reverse engineering. Vulnerabilities may be encountered (and identified) during the reverse engineering process, but they are not the primary feature of the material presented here. 
 
