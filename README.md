@@ -178,63 +178,6 @@ graph LR;
     B8 --> B8a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Power supply <br>• Oscilloscope<br>• Fuzzing-specific device (see table)</div>"]
 
 
-    #software
-    C1 --> C1a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C1 --> C1a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    #firmware
-    C2 --> C2a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C2 --> C2a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    # embedded
-    C3 --> C3a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C3 --> C3a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    # mobile
-    C4 --> C4a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C4 --> C4a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    # web applications
-    C5 --> C5a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C5 --> C5a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    # malware analysis
-    C6 --> C6a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    C6 --> C6a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-
-    #WiFi
-    D1 --> D1a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D1 --> D1a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    #Bluetooth
-    D2 --> D2a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D2 --> D2a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    #RFID/NFC
-    D3 --> D3a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D3 --> D3a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    # sub-GHz
-    D4 --> D4a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D4 --> D4a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    #Cellular
-    D5 --> D5a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D5 --> D5a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    #IoT protocols
-    D6 --> D6a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    D6 --> D6a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-
-    # protocol analysis
-    E1 --> E1a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E1 --> E1a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    # packet capture
-    E2 --> E2a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E2 --> E2a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    #network security
-    E3 --> E3a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E3 --> E3a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    #industrial/IoT Protocols
-    E4 --> E4a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E4 --> E4a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    # Network infrastructure
-    E5 --> E5a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E5 --> E5a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    # network forenics
-    E6 --> E6a1["<div style='text-align: left'><b>Task Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-    E6 --> E6a2["<div style='text-align: left'><b>Tool Examples:</b><br>• EXAMPLE<br>• EXAMPLE<br>• EXAMPLE</div>"]
-
       
     style A fill:#87ceeb,color:#000  
     style B fill:#dda0dd,color:#000  
