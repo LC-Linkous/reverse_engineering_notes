@@ -160,24 +160,6 @@ graph LR;
 
 
 
-    B1 --> B1a1["<div style='text-align: left'><b>Task Examples:</b><br>• Documentation Acquisition<br>• Photography<br>• Identifying enclosure markings</div>"]
-    B1 --> B1a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Notebook or digital notes<br>• Phone camera<br>• General hand tools (see table)</div>"]
-    B2 --> B2a1["<div style='text-align: left'><b>Task Examples:</b><br>• Continuity testing <br>• Power rail identification <br>• Interface port identification </div>"]
-    B2 --> B2a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Multimeter<br>• Magnifier <br>• Phone camera</div>"]
-    B3 --> B3a1["<div style='text-align: left'><b>Task Examples:</b><br>• Part number lookup <br>• Datasheet collection </div>"]
-    B3 --> B3a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Magnifier<br>• Phone camera<br>• UV Light</div>"]
-    B4 --> B4a1["<div style='text-align: left'><b>Task Examples:</b><br>• Identify trace connections <br>• Find and identify manufacturer markings<br>• Identify potential debug ports and test interfacing </div>"]
-    B4 --> B4a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Magnifier<br>• Multimeter</div>"]
-    B5 --> B5a1["<div style='text-align: left'><b>Task Examples:</b><br>• Protocol identification <br>• Timing analysis <br>• Analog waveform capture</div>"]
-    B5 --> B5a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Logic Analyzer<br>• Oscilloscope<br>• Multimeter</div>"]
-    B6 --> B6a1["<div style='text-align: left'><b>Task Examples:</b><br>• Power signature analysis <br>• Component/section isolation testing <br>• Monitoring voltage rail </div>"]
-    B6 --> B6a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Power Supply<br>• Multimeter<br>• Oscilloscope</div>"]
-    B7 --> B7a1["<div style='text-align: left'><b>Task Examples:</b><br>• (Unintended)Electromagnetic emissions capture <br>• Timing attack assessment <br>• Power analysis attack </div>"]
-    B7 --> B7a2["<div style='text-align: left'><b>Task Examples:</b><br>• SDR<br>• Spectrum Analyzer<br>• Oscilloscope</div>"]
-    B8 --> B8a1["<div style='text-align: left'><b>Task Examples:</b><br>• Voltage glitching <br>• Clock manipulation <br>• Input fuzzing</div>"]
-    B8 --> B8a2["<div style='text-align: left'><b>Tool Examples:</b><br>• Power supply <br>• Oscilloscope<br>• Fuzzing-specific device (see table)</div>"]
-
-
       
     style A fill:#87ceeb,color:#000  
     style B fill:#dda0dd,color:#000  
