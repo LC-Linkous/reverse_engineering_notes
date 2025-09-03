@@ -1,4 +1,7 @@
 # reverse_engineering_notes
+
+## UNDER DEVELOPMENT (Please Stand By!)
+
 an educational sample for selecting tools and methods to get started with reverse engineering. Updated periodically. This is the public half of the documentation used in an undergraduate elective course. 
 
 This repository provides some general methodology and a lot of references for how to get started with reverse engineering. It is for educational use only, so (code) examples included in this repository will be focused on tool usage only. 
@@ -157,10 +160,7 @@ graph LR;
     E --> E6[Network Forensics]
         
 
-
-
-
-      
+     
     style A fill:#87ceeb,color:#000  
     style B fill:#dda0dd,color:#000  
     style C fill:#98fb98,color:#000  
