@@ -129,6 +129,18 @@ As you become more adept at reverse engineering, you WILL need skills built acro
 In the chart below, clicking on a sub-topic block will redirect either to a subsection with more information on the topic, or the respective table if clicking a block listing tools. These are not exhaustive lists and are meant as a starting point. There are undoubtedly other good tools that exist for specific purposes that may not have been included in this list.
 
 ```mermaid
+flowchart TB
+    subgraph Resources
+        Docs[Read Docs]
+        Issues[View Issues]
+    end
+
+    click Docs href "https://example.com"
+    click Issues href "https://github.com"
+```
+
+
+```mermaid
 graph LR;
     A[Reverse Engineering] --> B["`[Hardware Analysis](https://github.com/LC-Linkous/reverse_engineering_notes#hardware-analysis)`"]
     A --> C["`[Code Analysis](https://github.com/LC-Linkous/reverse_engineering_notes#code-analysis)`"]
