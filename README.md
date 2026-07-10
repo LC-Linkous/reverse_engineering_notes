@@ -170,6 +170,38 @@ graph LR;
     style C fill:#98fb98,color:#000
     style D fill:#f0c674,color:#000
     style E fill:#f08080,color:#000
+
+
+    click B "https://github.com/LC-Linkous/reverse_engineering_notes#hardware-analysis" "Go to Hardware Analysis"
+    click C "https://github.com/LC-Linkous/reverse_engineering_notes#code-analysis" "Go to Code Analysis"
+    click D "https://github.com/LC-Linkous/reverse_engineering_notes#wireless-analysis" "Go to Wireless Analysis"
+    click E "https://github.com/LC-Linkous/reverse_engineering_notes#network-analysis" "Go to Network Analysis"
+    click B1 "https://github.com/LC-Linkous/reverse_engineering_notes#physical-device-access" "Go to Physical Device Access"
+    click B2 "https://github.com/LC-Linkous/reverse_engineering_notes#circuit-investigation" "Go to Circuit Investigation"
+    click B3 "https://github.com/LC-Linkous/reverse_engineering_notes#component-id" "Go to Component ID"
+    click B4 "https://github.com/LC-Linkous/reverse_engineering_notes#pcb-layout" "Go to PCB Layout"
+    click B5 "https://github.com/LC-Linkous/reverse_engineering_notes#signal-analysis" "Go to Signal Analysis"
+    click B6 "https://github.com/LC-Linkous/reverse_engineering_notes#power-analysis" "Go to Power Analysis"
+    click B7 "https://github.com/LC-Linkous/reverse_engineering_notes#side-channel-analysis" "Go to Side-channel Analysis"
+    click B8 "https://github.com/LC-Linkous/reverse_engineering_notes#fault-injection" "Go to Fault Injection"
+    click C1 "https://github.com/LC-Linkous/reverse_engineering_notes#software" "Go to Software"
+    click C2 "https://github.com/LC-Linkous/reverse_engineering_notes#firmware" "Go to Firmware"
+    click C3 "https://github.com/LC-Linkous/reverse_engineering_notes#embedded" "Go to Embedded"
+    click C4 "https://github.com/LC-Linkous/reverse_engineering_notes#mobile" "Go to Mobile"
+    click C5 "https://github.com/LC-Linkous/reverse_engineering_notes#web-applications" "Go to Web Applications"
+    click C6 "https://github.com/LC-Linkous/reverse_engineering_notes#malware-analysis" "Go to Malware Analysis"
+    click D1 "https://github.com/LC-Linkous/reverse_engineering_notes#wifi" "Go to WiFi"
+    click D2 "https://github.com/LC-Linkous/reverse_engineering_notes#bluetooth" "Go to Bluetooth"
+    click D3 "https://github.com/LC-Linkous/reverse_engineering_notes#rfidnfc" "Go to RFID/NFC"
+    click D4 "https://github.com/LC-Linkous/reverse_engineering_notes#sub-ghzism" "Go to Sub-GHz/ISM"
+    click D5 "https://github.com/LC-Linkous/reverse_engineering_notes#cellularmobile" "Go to Cellular/Mobile"
+    click D6 "https://github.com/LC-Linkous/reverse_engineering_notes#iot-protocols" "Go to IoT Protocols"
+    click E1 "https://github.com/LC-Linkous/reverse_engineering_notes#protocol-analysis" "Go to Protocol Analysis"
+    click E2 "https://github.com/LC-Linkous/reverse_engineering_notes#packet-capture" "Go to Packet Capture"
+    click E3 "https://github.com/LC-Linkous/reverse_engineering_notes#network-security" "Go to Network Security"
+    click E4 "https://github.com/LC-Linkous/reverse_engineering_notes#industrialiot-protocols" "Go to Industrial/IoT Protocols"
+    click E5 "https://github.com/LC-Linkous/reverse_engineering_notes#network-infrastructure" "Go to Network Infrastructure"
+    click E6 "https://github.com/LC-Linkous/reverse_engineering_notes#network-forensics" "Go to Network Forensics"
 ```
 
 ### Hardware Analysis
