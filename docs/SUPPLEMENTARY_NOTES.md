@@ -39,9 +39,9 @@ This is the single most important non-technical topic for a student audience, an
 
 **References to seed the section:**
 
-- U.S. Copyright Office, DMCA §1201 rulemaking: <https://www.copyright.gov/1201/>
-- EFF, "Coders' Rights Project": <https://www.eff.org/issues/coders>
-- CISA Coordinated Vulnerability Disclosure: <https://www.cisa.gov/coordinated-vulnerability-disclosure-process>
+- [U.S. Copyright Office — DMCA §1201 rulemaking](https://www.copyright.gov/1201/)
+- [EFF — Coders' Rights Project](https://www.eff.org/issues/coders)
+- [CISA — Coordinated Vulnerability Disclosure](https://www.cisa.gov/coordinated-vulnerability-disclosure-process)
 - DOJ policy on good-faith security research under CFAA (2022 charging policy) — worth citing as it narrowed prosecution of good-faith research.
 
 ---
