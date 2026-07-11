@@ -1,8 +1,6 @@
 # reverse_engineering_notes
 
-## UNDER DEVELOPMENT (Please Stand By!)
-
-> **Status:** The methodology, topic sections, and most of The Table are in place. Some tool tables and a few sub-sections are still being filled in, and the deeper reference material is being folded in from the companion notes (see below). Sections marked _(WIP)_ are known to be incomplete.
+> **Status:** Actively maintained and periodically updated as the public half of the documentation for an undergraduate elective course. The methodology, topic sections, and tool tables are in place; individual sections continue to grow over time. Last reviewed: July 2026.
 
 An educational sample for selecting tools and methods to get started with reverse engineering. Updated periodically. This is the public half of the documentation used in an undergraduate elective course.
 
@@ -244,7 +242,7 @@ Signal Analysis, Power Analysis, Side-channel Analysis, and Fault Injection requ
 - Packet creation and modification
 - Protocol identification and interfacing
 
-Some tools and software for these are listed in the [General Tools](#general-tools) table. Dedicated **Signal & Bus Analysis** and **Side-channel & Fault Injection** tool tables are planned _(WIP)_.
+Some tools and software for these are listed in the [General Tools](#general-tools), [Signal & Bus Analysis Tools](#signal--bus-analysis-tools), and [Side-channel & Fault Injection Tools](#side-channel--fault-injection-tools) tables.
 
 Documentation is extremely important when dealing with hardware analysis. In a professional situation, this establishes the condition of the device at all steps, makes the process replicable, and is a key part of evidence gathering for forensics. Organized documentation is also a key part of component identification and cross-referencing how components interact. Complicated devices may include hundreds of components, multiple daughterboards, and complex circuitry.
 
@@ -982,6 +980,44 @@ Not all listed tools are necessary for all approaches. Tools listed in this sect
 
 ---
 
+### Signal & Bus Analysis Tools
+
+These support [Signal Analysis](#signal-analysis) and general bus/protocol work. Start with a cheap logic analyzer and open-source software; add a scope and a dedicated interface board as needs grow. Costs are approximate and vary by region and model.
+
+| Tool | Purpose | Typical Cost | Notes |
+| ---- | ------- | ------------ | ----- |
+| Generic 8-channel logic analyzer (FX2-based) | Capture/decode digital buses (SPI, I2C, UART) | $10-15 | Inexpensive Cypress FX2 clones; work with sigrok/PulseView. A fine first purchase. |
+| [PulseView / sigrok](https://sigrok.org/) | Open-source capture + protocol decoding software | Free | Drives many analyzers; large protocol-decoder library. Software, not hardware. |
+| [Saleae Logic 8 / Pro](https://www.saleae.com/) | Multi-channel logic analysis with protocol decoders | $400-1,500 | Polished software (Logic 2) and reliable hardware; a common professional default. |
+| [DSLogic (DreamSourceLab)](https://www.dreamsourcelab.com/) | Higher-rate/deeper logic capture | $100-300 | More sample depth and speed than FX2 clones; uses DSView. |
+| [Digilent Analog Discovery 3](https://digilent.com/) | Combined oscilloscope + logic analyzer + pattern generator | $300-500 | USB all-in-one bench instrument; useful where space or budget is tight. |
+| Entry oscilloscope (e.g., [Rigol DS1054Z](https://www.rigol.com/)) | Analog waveform capture, timing, signal integrity | $350-450 | Ubiquitous budget 4-channel scope; huge community support. |
+| [Bus Pirate](http://dangerousprototypes.com/docs/Bus_Pirate) | Interactive multi-protocol bus interface | $30-50 | Also listed under [Firmware Tools](#firmware-tools); good for poking unknown SPI/I2C/UART buses. |
+| [Tigard](https://github.com/tigard-tools/tigard) | FT2232H multi-protocol interface board | $40-50 | Open-source; UART/JTAG/SWD/SPI/I2C with proper level shifting. |
+| [Glasgow Interface Explorer](https://glasgow-embedded.org/) | Versatile, scriptable digital interface tool | $150-250 | FPGA-based with a growing applet ecosystem. |
+
+---
+
+### Side-channel & Fault Injection Tools
+
+These are the most advanced hardware topics here; they support [Side-channel Analysis](#side-channel-analysis) and [Fault Injection](#fault-injection). Most people can start with a scope-based DIY approach before investing in dedicated platforms.
+
+> [!WARNING]
+> Fault-injection and EMFI gear can involve **high voltages** and can permanently damage a target (or the operator). Treat every tool in this table as lab-only, use appropriate precautions, and only ever apply these techniques to devices you own or are explicitly authorized to test.
+
+| Tool | Purpose | Typical Cost | Notes |
+| ---- | ------- | ------------ | ----- |
+| Oscilloscope + shunt resistor | DIY power-trace capture | (scope cost) | A scope across a small series resistor captures power traces with no dedicated SCA gear. |
+| [ChipWhisperer-Nano](https://www.newae.com/) | Entry power analysis + basic glitching | ~$50 | The cheapest way into side-channel/fault work; teaching-oriented. |
+| [ChipWhisperer-Lite](https://www.newae.com/) | Power analysis + voltage/clock glitching | $250-350 | The classic education/research SCA + fault-injection platform. |
+| [ChipWhisperer-Husky](https://www.newae.com/) | Higher-performance SCA + fault injection | $500+ | Modern successor with faster capture and more features. |
+| [PicoEMP](https://github.com/newaetech/chipshouter-picoemp) | Low-cost open-source electromagnetic fault injection (EMFI) | ~$50 (DIY) | Community EMFI design. **High-voltage — build and operate with extreme caution.** |
+| [ChipSHOUTER (NewAE)](https://www.newae.com/chipshouter) | Professional electromagnetic fault injection | $3,000+ | Powerful, hazardous EMFI tool used in labs. |
+| [Langer near-field EM probes](https://www.langer-emv.de/) | Localize/capture EM emissions for side-channel or EMFI targeting | $300-2,000+ | Probe sets paired with a scope or SDR. |
+| [lascar](https://github.com/Ledger-Donjon/lascar) | Side-channel analysis software (leakage assessment, CPA) | Free | Analysis library for correlation power analysis; complements capture hardware. |
+
+---
+
 ### Disassemblers, Decompilers, Debuggers
 
 Three categories of tools are used for code analysis at various levels. Disassemblers, decompilers, and debuggers are all tools that can provide important information for how a computer program works. However, they all have different usages and benefits.
@@ -1252,38 +1288,38 @@ In this section is a collection of books and websites for further reading. No si
 
 **Multi-Topic References**
 
-- <https://www.allaboutcircuits.com/> — circuitry tutorials, embedded work, cybersecurity
+- [All About Circuits](https://www.allaboutcircuits.com/) — circuitry tutorials, embedded work, cybersecurity
 
 **Circuitry Basics**
 
-- "Basic Electronics Tutorials," Electronics Tutorials. <https://www.electronics-tutorials.ws/> — library of tutorials for DC (and some AC) circuits
-- "A BETTER way to learn electronics," CircuitBread. <https://www.circuitbread.com/> — "Circuits 101" tutorials on circuits, components, calculations, and measurements: <https://www.circuitbread.com/tutorials/series/circuits-101>
+- [Basic Electronics Tutorials](https://www.electronics-tutorials.ws/) — library of tutorials for DC (and some AC) circuits
+- [CircuitBread — Circuits 101](https://www.circuitbread.com/tutorials/series/circuits-101) — tutorials on circuits, components, calculations, and measurements
 
 **Hardware Interfacing Basics** (manufacturer-standard interfaces: JTAG, SPI, UART, etc.)
 
-- "The art of finding JTAG on PCBs," Pen Test Partners. <https://www.pentestpartners.com/security-blog/the-art-of-finding-jtag-on-pcbs/>
-- "The Newbie's Guide To JTAG," Hackaday. <https://hackaday.com/2020/02/24/the-newbies-guide-to-jtag/>
-- "Hardware Hacking 101: Identifying and Verifying JTAG on a Device," River Loop Security. <https://riverloopsecurity.com/blog/2021/05/hw-101-jtag-part2/>
-- "Serial Peripheral Interface (SPI)," SparkFun. <https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/all>
-- "SPI Tutorial," Corelis. <https://www.corelis.com/education/tutorials/spi-tutorial/>
-- "How to Set Up UART Communication on the Arduino," Circuit Basics. <https://www.circuitbasics.com/how-to-set-up-uart-communication-for-arduino/>
+- [The art of finding JTAG on PCBs](https://www.pentestpartners.com/security-blog/the-art-of-finding-jtag-on-pcbs/) — Pen Test Partners
+- [The Newbie's Guide To JTAG](https://hackaday.com/2020/02/24/the-newbies-guide-to-jtag/) — Hackaday
+- [Hardware Hacking 101: Identifying and Verifying JTAG](https://riverloopsecurity.com/blog/2021/05/hw-101-jtag-part2/) — River Loop Security
+- [Serial Peripheral Interface (SPI)](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/all) — SparkFun
+- [SPI Tutorial](https://www.corelis.com/education/tutorials/spi-tutorial/) — Corelis
+- [How to Set Up UART Communication on the Arduino](https://www.circuitbasics.com/how-to-set-up-uart-communication-for-arduino/) — Circuit Basics
 
 **SDR Basics**
 
-- "Software-defined radio," Wikipedia. <https://en.wikipedia.org/wiki/Software-defined_radio> — quick definitions
-- "Tutorials," GNU Radio Wiki. <https://wiki.gnuradio.org/index.php/Tutorials> — operating SDRs with GNU Radio
-- "The PySDR Guide." <https://pysdr.org/> — a practical, code-first intro to SDR and DSP in Python
+- [Software-defined radio](https://en.wikipedia.org/wiki/Software-defined_radio) — Wikipedia; quick definitions
+- [GNU Radio Tutorials](https://wiki.gnuradio.org/index.php/Tutorials) — operating SDRs with GNU Radio
+- [The PySDR Guide](https://pysdr.org/) — a practical, code-first intro to SDR and DSP in Python
 
 **Malware Basics** (no references to creating, using, or distributing malware are included; these cover definition and scope only)
 
-- "What is Malware?," Cisco. <https://www.cisco.com/site/us/en/learn/topics/security/what-is-malware.html>
-- "malware — Glossary," NIST CSRC. <https://csrc.nist.gov/glossary/term/malware>
+- [What is Malware?](https://www.cisco.com/site/us/en/learn/topics/security/what-is-malware.html) — Cisco
+- [malware — Glossary](https://csrc.nist.gov/glossary/term/malware) — NIST CSRC
 
 **Wireless Basics**
 
-- "Microwaves101." <https://www.microwaves101.com/>
-- "Antenna Theory Tutorial," TutorialsPoint. <https://www.tutorialspoint.com/antenna_theory/index.htm>
-- "Antenna Basics," Antenna-Theory.com. <https://www.antenna-theory.com/basics/main.php>
+- [Microwaves101](https://www.microwaves101.com/) — RF/microwave reference and calculators
+- [Antenna Theory Tutorial](https://www.tutorialspoint.com/antenna_theory/index.htm) — TutorialsPoint
+- [Antenna Basics](https://www.antenna-theory.com/basics/main.php) — Antenna-Theory.com
 
 **Books for Further Reading** (no PDFs provided here)
 
