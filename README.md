@@ -31,6 +31,7 @@ As a general disclaimer, do not attempt to access or interface with any device o
 - [Bookshelf](#bookshelf)
 - [Glossary](#glossary)
 - [References](#references)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Requirements
@@ -1400,6 +1401,10 @@ This section provides a beginner-friendly launch point to more specific terminol
 
 - iFixit, Adafruit, SparkFun, Digi-Key, Mouser, Great Scott Gadgets, Hex-Rays, and manufacturer sites linked inline throughout The Table.
 
+
+## Contributing
+
+Corrections, new tools, clearer explanations, and demo code are all welcome. Please **open an issue before a pull request** — even small changes sometimes need a quick discussion, and it keeps things transparent. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for how, and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) for the ground rules (short version: this is for learning on things you own or are authorized to test — material aimed at breaking that boundary is not accepted).
 
 ## License
 
