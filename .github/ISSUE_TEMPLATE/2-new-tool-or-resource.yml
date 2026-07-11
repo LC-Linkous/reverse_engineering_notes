@@ -1,0 +1,62 @@
+name: New Tool or Resource
+description: Suggest a tool for the tables, or a reading / practice resource.
+title: "[tool]: "
+labels: ["new-resource"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggesting something to add to the tables or reading lists? Thank you.
+
+        **Please [search existing issues](https://github.com/LC-Linkous/reverse_engineering_notes/issues) first**, and see the table/citation conventions in [CONTRIBUTING](https://github.com/LC-Linkous/reverse_engineering_notes/blob/main/CONTRIBUTING.md).
+  - type: input
+    id: name
+    attributes:
+      label: Tool / resource name
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Official link
+      description: Link to the official homepage, repo, or source — not a reseller or affiliate link.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: dropdown
+    id: destination
+    attributes:
+      label: Where should it go?
+      description: Which table or list does this belong in?
+      options:
+        - General Tools
+        - Signal & Bus Analysis Tools
+        - Side-channel & Fault Injection Tools
+        - Disassemblers, Decompilers, Debuggers
+        - Firmware Tools
+        - Wireless Tools
+        - Cellular Tools
+        - Web Application Tools
+        - Malware Detection / Triage Tools
+        - Network Analysis Tools
+        - Bookshelf / reading list
+        - Practice / CTF resource
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Neutral one-line description
+      description: What does it do, and roughly what does it cost (if it's hardware or paid)? Keep it factual.
+    validations:
+      required: true
+  - type: checkboxes
+    id: ground-rules
+    attributes:
+      label: Ground rules
+      options:
+        - label: This links to the official source (no affiliate or referral links), and I understand that listing a tool is not an endorsement.
+          required: true
+        - label: I've read the [Code of Conduct](https://github.com/LC-Linkous/reverse_engineering_notes/blob/main/CODE_OF_CONDUCT.md), and this fits an educational, owned-devices / authorized-testing context.
+          required: true

@@ -1,0 +1,40 @@
+name: Bug or Correction
+description: Report a typo, broken link, dead tool, or inaccurate technical claim.
+title: "[fix]: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep these notes accurate.
+
+        **Please [search existing issues](https://github.com/LC-Linkous/reverse_engineering_notes/issues) first** so we don't duplicate work.
+  - type: input
+    id: location
+    attributes:
+      label: Where is it?
+      description: Which file and section? (e.g., "README → Wireless Tools table" or "docs/SUPPLEMENTARY_NOTES.md → FCC ID Lookups")
+      placeholder: README → Component ID
+    validations:
+      required: true
+  - type: textarea
+    id: whats-wrong
+    attributes:
+      label: What's wrong?
+      description: Describe the error — the typo, the broken or incorrect link, the tool that no longer exists, or the inaccurate claim.
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested fix (optional)
+      description: If you already know the correction, share it. For technical claims, a source or link is very helpful.
+    validations:
+      required: false
+  - type: checkboxes
+    id: ground-rules
+    attributes:
+      label: Ground rules
+      options:
+        - label: I've read the [Code of Conduct](https://github.com/LC-Linkous/reverse_engineering_notes/blob/main/CODE_OF_CONDUCT.md), and this report is about improving the material — not adding exploits, malware, or anything aimed at systems or devices I don't own.
+          required: true
